@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://vipql3vhisf8"
+path="res://.godot/imported/slow-travel.wav-7b388b8f2c5e6eeec67b4212fc5f2317.sample"
+
+[deps]
+
+source_file="res://musics/BGM/Space Music Pack/slow-travel.wav"
+dest_files=["res://.godot/imported/slow-travel.wav-7b388b8f2c5e6eeec67b4212fc5f2317.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

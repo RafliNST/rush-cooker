@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://vwp5l8eh7gl0"
+path="res://.godot/imported/start-level.wav-e6e2bd8fca23eab37931b2e318ead9cf.sample"
+
+[deps]
+
+source_file="res://musics/BGM/Space Music Pack/fx/start-level.wav"
+dest_files=["res://.godot/imported/start-level.wav-e6e2bd8fca23eab37931b2e318ead9cf.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

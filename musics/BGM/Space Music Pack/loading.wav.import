@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dkq7ew2e6qfcp"
+path="res://.godot/imported/loading.wav-fb73d47d3be1e62042a815bed645cd6b.sample"
+
+[deps]
+
+source_file="res://musics/BGM/Space Music Pack/loading.wav"
+dest_files=["res://.godot/imported/loading.wav-fb73d47d3be1e62042a815bed645cd6b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
