@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Menu" load_steps=8 format=3 uid="uid://bqv34k7us7n7u"]
+[gd_resource type="Resource" script_class="Menu" load_steps=9 format=3 uid="uid://bqv34k7us7n7u"]
 
 [ext_resource type="Script" path="res://scripts/resource/menu_item/menu_item.gd" id="1_36g0l"]
 [ext_resource type="Texture2D" uid="uid://cibhmqhbvo8ch" path="res://icon.svg" id="1_ahdfj"]
@@ -6,17 +6,23 @@
 [ext_resource type="Script" path="res://scripts/resource/menu/menu.gd" id="2_gsjgc"]
 [ext_resource type="Resource" uid="uid://87skqfecoanb" path="res://scripts/resource/ingridient/tomato.tres" id="4_cahbe"]
 
-[sub_resource type="Resource" id="Resource_52ts6"]
+[sub_resource type="Resource" id="Resource_8oh8m"]
 script = ExtResource("1_36g0l")
-lane_pos = Array[int]([2])
 ingridient = ExtResource("4_cahbe")
-beat_number = 1
+beat_number = 2
+lane_pos = Array[int]([0, 1, 2])
 
-[sub_resource type="Resource" id="Resource_ummk3"]
+[sub_resource type="Resource" id="Resource_d1f15"]
 script = ExtResource("1_36g0l")
-lane_pos = Array[int]([1, 0])
 ingridient = ExtResource("4_cahbe")
-beat_number = 5
+beat_number = 3
+lane_pos = Array[int]([0, 1, 2])
+
+[sub_resource type="Resource" id="Resource_cufln"]
+script = ExtResource("1_36g0l")
+ingridient = ExtResource("4_cahbe")
+beat_number = 4
+lane_pos = Array[int]([0, 1, 2])
 
 [resource]
 script = ExtResource("2_gsjgc")
@@ -24,4 +30,4 @@ name = "Nasi Goreng"
 icon = ExtResource("1_ahdfj")
 BGM = ExtResource("1_jul4r")
 BPM = 120
-ingridients = Array[ExtResource("1_36g0l")]([SubResource("Resource_52ts6"), SubResource("Resource_ummk3")])
+ingredients = Array[ExtResource("1_36g0l")]([SubResource("Resource_8oh8m"), SubResource("Resource_d1f15"), SubResource("Resource_cufln")])

@@ -7,7 +7,6 @@
 [node name="Note" type="Node2D"]
 script = ExtResource("1_4evxd")
 ingridient = ExtResource("2_ibmgv")
-speed = 5
 
 [node name="Icon" type="Sprite2D" parent="."]
 texture = ExtResource("3_rdadt")

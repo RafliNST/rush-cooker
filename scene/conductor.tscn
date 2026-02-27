@@ -8,13 +8,14 @@
 
 [node name="Conductor" type="Timer"]
 script = ExtResource("1_qpflo")
+offset = 2.045
 current_menu = ExtResource("2_nta3u")
 other_menu = ExtResource("3_368dk")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [node name="NoteSpawner" parent="." instance=ExtResource("4_e2t46")]
-position = Vector2(500, -50)
+position = Vector2(500, -170)
 note_scene = ExtResource("5_h87aq")
 
 [connection signal="music_beat" from="." to="NoteSpawner" method="_on_conductor_music_beat"]
