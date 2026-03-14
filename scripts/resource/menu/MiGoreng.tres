@@ -1,14 +1,27 @@
-[gd_resource type="Resource" script_class="Menu" load_steps=5 format=3 uid="uid://dl1o8yi0g2k7x"]
+[gd_resource type="Resource" script_class="Menu" load_steps=8 format=3 uid="uid://dl1o8yi0g2k7x"]
 
 [ext_resource type="Script" path="res://scripts/resource/menu_item/menu_item.gd" id="1_3t8to"]
-[ext_resource type="AudioStream" uid="uid://dkq7ew2e6qfcp" path="res://musics/BGM/Space Music Pack/loading.wav" id="1_wrlr7"]
+[ext_resource type="AudioStream" uid="uid://blyf1fewbxqsn" path="res://musics/dummy/ヨルシカ - さよならモルテン.mp3" id="1_6stq1"]
 [ext_resource type="Script" path="res://scripts/resource/menu/menu.gd" id="2_bbl7o"]
 [ext_resource type="Texture2D" uid="uid://cibhmqhbvo8ch" path="res://icon.svg" id="2_iyxrf"]
+[ext_resource type="Resource" uid="uid://87skqfecoanb" path="res://scripts/resource/ingridient/tomato.tres" id="4_jhkhn"]
+
+[sub_resource type="Resource" id="Resource_xqara"]
+script = ExtResource("1_3t8to")
+ingridient = ExtResource("4_jhkhn")
+beat_number = 2
+lane_pos = Array[int]([2])
+
+[sub_resource type="Resource" id="Resource_efvxc"]
+script = ExtResource("1_3t8to")
+ingridient = ExtResource("4_jhkhn")
+beat_number = 3
+lane_pos = Array[int]([1])
 
 [resource]
 script = ExtResource("2_bbl7o")
 name = "Mi Goreng"
 icon = ExtResource("2_iyxrf")
-BGM = ExtResource("1_wrlr7")
-BPM = 120
-ingredients = Array[ExtResource("1_3t8to")]([])
+BGM = ExtResource("1_6stq1")
+BPM = 130
+ingredients = Array[ExtResource("1_3t8to")]([SubResource("Resource_xqara"), SubResource("Resource_efvxc")])

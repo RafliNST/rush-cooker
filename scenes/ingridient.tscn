@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8ykqn03xecew"]
+
+[ext_resource type="Script" path="res://scripts/ingridient.gd" id="1_5qvts"]
+[ext_resource type="Texture2D" uid="uid://d4cwr8hhuv1b6" path="res://textures/sprites/vegetables-16x16.png" id="2_jq8ux"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1uuhi"]
+atlas = ExtResource("2_jq8ux")
+region = Rect2(32, 0, 16, 16)
+
+[node name="Note" type="Node2D"]
+script = ExtResource("1_5qvts")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(8, 8)
+texture = SubResource("AtlasTexture_1uuhi")
+
+[node name="AudioOutput" type="AudioStreamPlayer2D" parent="."]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://civonus0xu7kq"]
+
+[ext_resource type="Script" path="res://scripts/lane.gd" id="1_iythr"]
+
+[node name="Lane" type="Node2D"]
+script = ExtResource("1_iythr")
+
+[node name="AudioStream" type="AudioStreamPlayer2D" parent="."]
+
+[node name="TargetPos" type="Marker2D" parent="."]
+position = Vector2(0, 670)
+
+[connection signal="on_note_beat" from="." to="." method="_on_on_note_beat"]

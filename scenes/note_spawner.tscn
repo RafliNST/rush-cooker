@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5g2ocaxet8d"]
+
+[ext_resource type="Script" path="res://scripts/note_spawner.gd" id="1_uh6wd"]
+[ext_resource type="PackedScene" uid="uid://civonus0xu7kq" path="res://scenes/lane.tscn" id="2_4a2i1"]
+[ext_resource type="PackedScene" uid="uid://c8ykqn03xecew" path="res://scenes/ingridient.tscn" id="2_4uboq"]
+[ext_resource type="AudioStream" uid="uid://i8xl6jbbeyyn" path="res://musics/SFX/Miscellaneous/misc-pointer-static.mp3" id="4_uq444"]
+[ext_resource type="AudioStream" uid="uid://cpil4acd1fyyl" path="res://musics/SFX/Miscellaneous/misc-cinematic-buildup.mp3" id="5_vbw4j"]
+[ext_resource type="AudioStream" uid="uid://c2i8pcow3f8oh" path="res://musics/SFX/Miscellaneous/misc-buzz.mp3" id="6_dnv26"]
+
+[node name="NoteSpawner" type="Node2D"]
+script = ExtResource("1_uh6wd")
+note_scene = ExtResource("2_4uboq")
+
+[node name="LeftLane" parent="." instance=ExtResource("2_4a2i1")]
+position = Vector2(-150, 0)
+audio = ExtResource("4_uq444")
+action_name = "beat_left_press"
+
+[node name="CenterLane" parent="." instance=ExtResource("2_4a2i1")]
+audio = ExtResource("5_vbw4j")
+action_name = "beat_center_press"
+lane_position = 1
+
+[node name="RightLane" parent="." instance=ExtResource("2_4a2i1")]
+position = Vector2(150, 0)
+audio = ExtResource("6_dnv26")
+action_name = "beat_right_press"
+lane_position = 2

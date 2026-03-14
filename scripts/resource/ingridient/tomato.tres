@@ -1,10 +1,14 @@
-[gd_resource type="Resource" script_class="Ingridient" load_steps=4 format=3 uid="uid://87skqfecoanb"]
+[gd_resource type="Resource" script_class="Ingridient" load_steps=5 format=3 uid="uid://87skqfecoanb"]
 
 [ext_resource type="Script" path="res://scripts/resource/ingridient/ingridient.gd" id="1_4m5jf"]
-[ext_resource type="AudioStream" uid="uid://drpl3ncdw1x8u" path="res://musics/SFX/Guitar/gtr-bendup-1.mp3" id="1_7x0di"]
-[ext_resource type="Texture2D" uid="uid://cibhmqhbvo8ch" path="res://icon.svg" id="3_maucu"]
+[ext_resource type="AudioStream" uid="uid://dklymbxd0avpk" path="res://musics/SFX/Guitar/gtr-cancel-2.mp3" id="1_nxls5"]
+[ext_resource type="Texture2D" uid="uid://d4cwr8hhuv1b6" path="res://textures/sprites/vegetables-16x16.png" id="3_y3nxg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8b2c"]
+atlas = ExtResource("3_y3nxg")
+region = Rect2(0, 0, 16, 16)
 
 [resource]
 script = ExtResource("1_4m5jf")
-sprite = ExtResource("3_maucu")
-SFX = ExtResource("1_7x0di")
+sprite = SubResource("AtlasTexture_b8b2c")
+SFX = ExtResource("1_nxls5")

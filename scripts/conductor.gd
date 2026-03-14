@@ -46,8 +46,8 @@ func change_track(menu: Menu):
 	wait_time = current_menu.BPM / 60.0
 	#wait_time = 60.0 / current_menu.BPM
 	
+	setup_timer()
 	play_music()
-	start()
 	track_changed.emit()
 
 func _on_timeout() -> void:
