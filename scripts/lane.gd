@@ -16,5 +16,5 @@ func _input(event: InputEvent) -> void:
 		#print("Name: " + name + " Size: " + str(notes.size()))
 		if notes.size() > 0:
 			notes[0].audio_output.play()
-			self.notes.pop_front()
+			#self.notes.pop_front()
 		
