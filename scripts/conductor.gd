@@ -1,4 +1,6 @@
-extends Timer
+extends Node2D
+
+class_name Conductor
 
 signal track_changed
 
@@ -7,12 +9,21 @@ signal track_changed
 @export var current_menu: Menu
 @export var other_menu: Menu
 
-@onready var audio_player := $AudioStreamPlayer2D
+@onready var audio_player := $AudioStream
+@onready var note_timer := $NoteTimer
 
 signal music_beat(beat_number: int, item: MenuItem)
 
+static var Instance: Conductor
+
 var beat_number := 0
 var beat_arr_pos := 0
+
+func _enter_tree() -> void:
+	Instance = self
+	
+func _exit_tree() -> void:
+	Instance = null
 
 func _ready() -> void:
 	if current_menu != null:
@@ -27,12 +38,12 @@ func get_music_progress() -> float:
 	return audio_player.get_playback_position()
 	
 func get_current_beat_pos() -> float:
-	return get_music_progress() / (wait_time * offset)
+	return get_music_progress() / (note_timer.wait_time * offset)
 
 func setup_timer():
-	wait_time = 60.0 / current_menu.BPM
-	print("Wait Time: " + str(wait_time))
-	start()
+	note_timer.wait_time = 60.0 / current_menu.BPM
+	print("Wait Time: " + str(note_timer.wait_time))
+	note_timer.start()
 
 func play_music():
 	audio_player.stream = current_menu.BGM
@@ -43,8 +54,8 @@ func change_track(menu: Menu):
 	beat_arr_pos = 0
 	
 	current_menu = menu
-	wait_time = current_menu.BPM / 60.0
-	#wait_time = 60.0 / current_menu.BPM
+	note_timer.wait_time = current_menu.BPM / 60.0
+	#note_timer.wait_time = 60.0 / current_menu.BPM
 	
 	setup_timer()
 	play_music()

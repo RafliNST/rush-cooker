@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccjqxopub3fl"]
+
+[ext_resource type="PackedScene" uid="uid://bntavy6d62b4f" path="res://scenes/conductor.tscn" id="1_mbljc"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Conductor" parent="." instance=ExtResource("1_mbljc")]

@@ -14,7 +14,7 @@ var beat_number := 0
 var process := 0.0
 
 func _process(delta: float) -> void:
-	process = beat_number - Conductor.get_current_beat_pos()
+	process = beat_number - Conductor.Instance.get_current_beat_pos()
 	process = clamp(process, 0,1)
 	position = target_pos.lerp(spawn_pos, process)
 

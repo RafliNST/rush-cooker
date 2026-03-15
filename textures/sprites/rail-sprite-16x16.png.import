@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8ck823eulwfw"
-path="res://.godot/imported/vegetables-16x16.png-884186449a17aa545bb7da3fbd56d50b.ctex"
+uid="uid://bwho5o0b3unm6"
+path="res://.godot/imported/rail-sprite-16x16.png-adf39ca6d987d8213e8daabf60bd02b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/sprites/vegetables-16x16.png"
-dest_files=["res://.godot/imported/vegetables-16x16.png-884186449a17aa545bb7da3fbd56d50b.ctex"]
+source_file="res://textures/sprites/rail-sprite-16x16.png"
+dest_files=["res://.godot/imported/rail-sprite-16x16.png-adf39ca6d987d8213e8daabf60bd02b6.ctex"]
 
 [params]
 
