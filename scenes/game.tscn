@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5kn0mc1fcie4"]
+
+[ext_resource type="PackedScene" uid="uid://bntavy6d62b4f" path="res://scenes/conductor.tscn" id="1_mbljc"]
+
+[node name="Game" type="Node2D"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/PanelContainer/SubViewportContainer"]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(300, 648)
+render_target_update_mode = 4
+
+[node name="Conductor" parent="HBoxContainer/PanelContainer/SubViewportContainer/SubViewport" instance=ExtResource("1_mbljc")]
+position = Vector2(150, -200)

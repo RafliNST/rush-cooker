@@ -14,10 +14,6 @@ config/name="rush-coocker"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[autoload]
-
-Conductor="*res://scenes/conductor.tscn"
-
 [input]
 
 beat_left_press={
