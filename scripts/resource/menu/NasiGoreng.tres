@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Menu" load_steps=18 format=3 uid="uid://bqv34k7us7n7u"]
 
+[ext_resource type="AudioStream" uid="uid://ccxo57o0ptrp5" path="res://musics/CobaLebihPanjang.mp3" id="1_26hca"]
 [ext_resource type="Script" path="res://scripts/resource/menu_item/menu_item.gd" id="1_36g0l"]
 [ext_resource type="Texture2D" uid="uid://cibhmqhbvo8ch" path="res://icon.svg" id="1_ahdfj"]
-[ext_resource type="AudioStream" uid="uid://7brys7450o7t" path="res://musics/dummy/ヨルシカ - 藍二乗.mp3" id="1_wfler"]
 [ext_resource type="Script" path="res://scripts/resource/menu/menu.gd" id="2_gsjgc"]
 [ext_resource type="Resource" uid="uid://87skqfecoanb" path="res://scripts/resource/ingridient/tomato.tres" id="4_cahbe"]
 [ext_resource type="Resource" uid="uid://yur05dr7nr6o" path="res://scripts/resource/ingridient/onion.tres" id="5_404nj"]
@@ -77,6 +77,6 @@ lane_pos = Array[int]([0, 1, 2])
 script = ExtResource("2_gsjgc")
 name = "Nasi Goreng"
 icon = ExtResource("1_ahdfj")
-BGM = ExtResource("1_wfler")
+BGM = ExtResource("1_26hca")
 BPM = 120
 ingredients = Array[ExtResource("1_36g0l")]([SubResource("Resource_8oh8m"), SubResource("Resource_d1f15"), SubResource("Resource_cufln"), SubResource("Resource_ry86l"), SubResource("Resource_ljxfk"), SubResource("Resource_uubst"), SubResource("Resource_bkv5b"), SubResource("Resource_57328"), SubResource("Resource_6x54s"), SubResource("Resource_prd12"), SubResource("Resource_6pq3j")])

@@ -1,4 +1,4 @@
-extends Node2D
+extends Timer
 
 signal track_changed
 
@@ -8,7 +8,6 @@ signal track_changed
 @export var other_menu: Menu
 
 @onready var audio_player := $AudioStreamPlayer2D
-@onready var beat_timer := $BeatTimer
 
 signal music_beat(beat_number: int, item: MenuItem)
 
@@ -28,12 +27,12 @@ func get_music_progress() -> float:
 	return audio_player.get_playback_position()
 	
 func get_current_beat_pos() -> float:
-	return get_music_progress() / (beat_timer.wait_time * offset)
+	return get_music_progress() / (wait_time * offset)
 
 func setup_timer():
-	beat_timer.wait_time = 60.0 / current_menu.BPM
-	print("Wait Time: " + str(beat_timer.wait_time))
-	beat_timer.start()
+	wait_time = 60.0 / current_menu.BPM
+	print("Wait Time: " + str(wait_time))
+	start()
 
 func play_music():
 	audio_player.stream = current_menu.BGM
@@ -44,8 +43,8 @@ func change_track(menu: Menu):
 	beat_arr_pos = 0
 	
 	current_menu = menu
-	beat_timer.wait_time = current_menu.BPM / 60.0
-	#beat_timer.wait_time = 60.0 / current_menu.BPM
+	wait_time = current_menu.BPM / 60.0
+	#wait_time = 60.0 / current_menu.BPM
 	
 	setup_timer()
 	play_music()

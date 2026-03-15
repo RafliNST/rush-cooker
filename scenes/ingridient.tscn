@@ -11,7 +11,7 @@ region = Rect2(32, 0, 16, 16)
 script = ExtResource("1_5qvts")
 
 [node name="Icon" type="Sprite2D" parent="."]
-scale = Vector2(4, 4)
+scale = Vector2(8, 8)
 texture = SubResource("AtlasTexture_1uuhi")
 
 [node name="AudioOutput" type="AudioStreamPlayer2D" parent="."]
