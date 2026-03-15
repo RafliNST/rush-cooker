@@ -12,7 +12,7 @@ script = ExtResource("1_uh6wd")
 note_scene = ExtResource("2_4uboq")
 
 [node name="LeftLane" parent="." instance=ExtResource("2_4a2i1")]
-position = Vector2(-150, 0)
+position = Vector2(-80, 0)
 audio = ExtResource("4_uq444")
 action_name = "beat_left_press"
 
@@ -22,7 +22,7 @@ action_name = "beat_center_press"
 lane_position = 1
 
 [node name="RightLane" parent="." instance=ExtResource("2_4a2i1")]
-position = Vector2(150, 0)
+position = Vector2(80, 0)
 audio = ExtResource("6_dnv26")
 action_name = "beat_right_press"
 lane_position = 2

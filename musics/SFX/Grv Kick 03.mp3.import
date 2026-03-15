@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ca3bxcq32530t"
+path="res://.godot/imported/Grv Kick 03.mp3-c28c9434c394852732ab1fb6ed874e48.mp3str"
+
+[deps]
+
+source_file="res://musics/SFX/Grv Kick 03.mp3"
+dest_files=["res://.godot/imported/Grv Kick 03.mp3-c28c9434c394852732ab1fb6ed874e48.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

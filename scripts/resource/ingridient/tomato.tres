@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Ingridient" load_steps=5 format=3 uid="uid://87skqfecoanb"]
 
 [ext_resource type="Script" path="res://scripts/resource/ingridient/ingridient.gd" id="1_4m5jf"]
-[ext_resource type="AudioStream" uid="uid://dklymbxd0avpk" path="res://musics/SFX/Guitar/gtr-cancel-2.mp3" id="1_nxls5"]
+[ext_resource type="AudioStream" uid="uid://32phgct7cpxd" path="res://musics/yeay.mp3" id="1_pohrn"]
 [ext_resource type="Texture2D" uid="uid://d4cwr8hhuv1b6" path="res://textures/sprites/vegetables-16x16.png" id="3_y3nxg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b8b2c"]
@@ -11,4 +11,4 @@ region = Rect2(0, 0, 16, 16)
 [resource]
 script = ExtResource("1_4m5jf")
 sprite = SubResource("AtlasTexture_b8b2c")
-SFX = ExtResource("1_nxls5")
+SFX = ExtResource("1_pohrn")

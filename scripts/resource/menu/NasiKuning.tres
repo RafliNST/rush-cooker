@@ -1,0 +1,81 @@
+[gd_resource type="Resource" script_class="Menu" load_steps=17 format=3 uid="uid://smbir07lkn26"]
+
+[ext_resource type="AudioStream" uid="uid://1168if30vpt4" path="res://musics/BGM/BGM-dari-Kokonut/thrill.mp3" id="1_so644"]
+[ext_resource type="Texture2D" uid="uid://cibhmqhbvo8ch" path="res://icon.svg" id="2_yfxe6"]
+[ext_resource type="Script" path="res://scripts/resource/menu_item/menu_item.gd" id="3_w4f7g"]
+[ext_resource type="Resource" uid="uid://87skqfecoanb" path="res://scripts/resource/ingridient/tomato.tres" id="4_x68h8"]
+[ext_resource type="Script" path="res://scripts/resource/menu/menu.gd" id="5_4jfrb"]
+
+[sub_resource type="Resource" id="Resource_64hf6"]
+script = ExtResource("3_w4f7g")
+ingridient = ExtResource("4_x68h8")
+beat_number = 2
+lane_pos = Array[int]([0, 1, 2])
+
+[sub_resource type="Resource" id="Resource_pap6y"]
+script = ExtResource("3_w4f7g")
+ingridient = ExtResource("4_x68h8")
+beat_number = 6
+lane_pos = Array[int]([0, 1, 2])
+
+[sub_resource type="Resource" id="Resource_wcpfn"]
+script = ExtResource("3_w4f7g")
+ingridient = ExtResource("4_x68h8")
+beat_number = 8
+lane_pos = Array[int]([0, 1, 2])
+
+[sub_resource type="Resource" id="Resource_v3347"]
+script = ExtResource("3_w4f7g")
+ingridient = ExtResource("4_x68h8")
+beat_number = 9
+lane_pos = Array[int]([0, 1, 2])
+
+[sub_resource type="Resource" id="Resource_uj2ag"]
+script = ExtResource("3_w4f7g")
+ingridient = ExtResource("4_x68h8")
+beat_number = 12
+lane_pos = Array[int]([0, 1, 2])
+
+[sub_resource type="Resource" id="Resource_qg8lm"]
+script = ExtResource("3_w4f7g")
+ingridient = ExtResource("4_x68h8")
+beat_number = 15
+lane_pos = Array[int]([0, 1, 2])
+
+[sub_resource type="Resource" id="Resource_ndstj"]
+script = ExtResource("3_w4f7g")
+ingridient = ExtResource("4_x68h8")
+beat_number = 17
+lane_pos = Array[int]([0, 1, 2])
+
+[sub_resource type="Resource" id="Resource_3eq8l"]
+script = ExtResource("3_w4f7g")
+ingridient = ExtResource("4_x68h8")
+beat_number = 18
+lane_pos = Array[int]([0, 1, 2])
+
+[sub_resource type="Resource" id="Resource_8p1qo"]
+script = ExtResource("3_w4f7g")
+ingridient = ExtResource("4_x68h8")
+beat_number = 22
+lane_pos = Array[int]([0, 1, 2])
+
+[sub_resource type="Resource" id="Resource_630w2"]
+script = ExtResource("3_w4f7g")
+ingridient = ExtResource("4_x68h8")
+beat_number = 25
+lane_pos = Array[int]([0, 1, 2])
+
+[sub_resource type="Resource" id="Resource_dh8c5"]
+script = ExtResource("3_w4f7g")
+ingridient = ExtResource("4_x68h8")
+beat_number = 32
+lane_pos = Array[int]([0, 1, 2])
+
+[resource]
+script = ExtResource("5_4jfrb")
+name = "Nasi Kuning"
+icon = ExtResource("2_yfxe6")
+BGM = ExtResource("1_so644")
+BPM = 106
+ingredients = Array[ExtResource("3_w4f7g")]([SubResource("Resource_64hf6"), SubResource("Resource_pap6y"), SubResource("Resource_wcpfn"), SubResource("Resource_v3347"), SubResource("Resource_uj2ag"), SubResource("Resource_qg8lm"), SubResource("Resource_ndstj"), SubResource("Resource_3eq8l"), SubResource("Resource_8p1qo"), SubResource("Resource_630w2"), SubResource("Resource_dh8c5")])
