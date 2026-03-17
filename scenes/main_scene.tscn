@@ -24,7 +24,7 @@ size = Vector2i(300, 680)
 render_target_update_mode = 4
 
 [node name="Conductor" parent="HBoxContainer/RhythmContainer/SubViewportContainer/SubViewport" instance=ExtResource("1_pbw8e")]
-position = Vector2(150, -150)
+position = Vector2(150, -160)
 current_menu = ExtResource("2_4ppdc")
 other_menu = ExtResource("2_4ppdc")
 

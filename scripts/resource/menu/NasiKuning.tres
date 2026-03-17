@@ -1,106 +1,107 @@
-[gd_resource type="Resource" script_class="Menu" load_steps=22 format=3 uid="uid://sy5okdw5dcy1"]
+[gd_resource type="Resource" script_class="Menu" load_steps=23 format=3 uid="uid://sy5okdw5dcy1"]
 
 [ext_resource type="AudioStream" uid="uid://b7e6ynwffmkov" path="res://musics/BGM/BGM-dari-Kokonut/thrill.mp3" id="1_3h3bs"]
 [ext_resource type="Texture2D" uid="uid://cibhmqhbvo8ch" path="res://icon.svg" id="2_uyce3"]
 [ext_resource type="Script" path="res://scripts/resource/menu_item/menu_item.gd" id="3_b2j7p"]
 [ext_resource type="Resource" uid="uid://87skqfecoanb" path="res://scripts/resource/ingridient/tomato.tres" id="4_qolcc"]
 [ext_resource type="Script" path="res://scripts/resource/menu/menu.gd" id="5_r2e4e"]
+[ext_resource type="Resource" uid="uid://yur05dr7nr6o" path="res://scripts/resource/ingridient/onion.tres" id="5_rwhna"]
 
 [sub_resource type="Resource" id="Resource_xqara"]
 script = ExtResource("3_b2j7p")
 ingridient = ExtResource("4_qolcc")
 beat_number = 2
-lane_pos = Array[int]([2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_efvxc"]
 script = ExtResource("3_b2j7p")
-ingridient = ExtResource("4_qolcc")
+ingridient = ExtResource("5_rwhna")
 beat_number = 3
-lane_pos = Array[int]([1])
+lane_pos = 2
 
 [sub_resource type="Resource" id="Resource_8qb5t"]
 script = ExtResource("3_b2j7p")
 ingridient = ExtResource("4_qolcc")
 beat_number = 4
-lane_pos = Array[int]([1])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_lxp65"]
 script = ExtResource("3_b2j7p")
 ingridient = ExtResource("4_qolcc")
 beat_number = 5
-lane_pos = Array[int]([1])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_6gsmw"]
 script = ExtResource("3_b2j7p")
 ingridient = ExtResource("4_qolcc")
 beat_number = 7
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_b6560"]
 script = ExtResource("3_b2j7p")
 ingridient = ExtResource("4_qolcc")
 beat_number = 11
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_ikvur"]
 script = ExtResource("3_b2j7p")
 ingridient = ExtResource("4_qolcc")
 beat_number = 12
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_72oct"]
 script = ExtResource("3_b2j7p")
 ingridient = ExtResource("4_qolcc")
 beat_number = 14
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_tk4md"]
 script = ExtResource("3_b2j7p")
 ingridient = ExtResource("4_qolcc")
 beat_number = 15
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_fb1sw"]
 script = ExtResource("3_b2j7p")
 ingridient = ExtResource("4_qolcc")
 beat_number = 18
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_qcfyv"]
 script = ExtResource("3_b2j7p")
 ingridient = ExtResource("4_qolcc")
 beat_number = 21
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_vf5rr"]
 script = ExtResource("3_b2j7p")
 ingridient = ExtResource("4_qolcc")
 beat_number = 22
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_r2xoh"]
 script = ExtResource("3_b2j7p")
 ingridient = ExtResource("4_qolcc")
 beat_number = 27
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_kbwn7"]
 script = ExtResource("3_b2j7p")
 ingridient = ExtResource("4_qolcc")
 beat_number = 28
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_nlhme"]
 script = ExtResource("3_b2j7p")
 ingridient = ExtResource("4_qolcc")
 beat_number = 29
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_j40ku"]
 script = ExtResource("3_b2j7p")
 ingridient = ExtResource("4_qolcc")
 beat_number = 30
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [resource]
 script = ExtResource("5_r2e4e")

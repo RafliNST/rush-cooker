@@ -1,106 +1,107 @@
-[gd_resource type="Resource" script_class="Menu" load_steps=22 format=3 uid="uid://dl1o8yi0g2k7x"]
+[gd_resource type="Resource" script_class="Menu" load_steps=23 format=3 uid="uid://dl1o8yi0g2k7x"]
 
 [ext_resource type="Script" path="res://scripts/resource/menu_item/menu_item.gd" id="1_3t8to"]
 [ext_resource type="AudioStream" uid="uid://blyf1fewbxqsn" path="res://musics/dummy/ヨルシカ - さよならモルテン.mp3" id="1_6stq1"]
 [ext_resource type="Script" path="res://scripts/resource/menu/menu.gd" id="2_bbl7o"]
 [ext_resource type="Texture2D" uid="uid://cibhmqhbvo8ch" path="res://icon.svg" id="2_iyxrf"]
 [ext_resource type="Resource" uid="uid://87skqfecoanb" path="res://scripts/resource/ingridient/tomato.tres" id="4_jhkhn"]
+[ext_resource type="Resource" uid="uid://yur05dr7nr6o" path="res://scripts/resource/ingridient/onion.tres" id="5_2xwj5"]
 
 [sub_resource type="Resource" id="Resource_xqara"]
 script = ExtResource("1_3t8to")
 ingridient = ExtResource("4_jhkhn")
 beat_number = 2
-lane_pos = Array[int]([2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_efvxc"]
 script = ExtResource("1_3t8to")
-ingridient = ExtResource("4_jhkhn")
-beat_number = 3
-lane_pos = Array[int]([1])
+ingridient = ExtResource("5_2xwj5")
+beat_number = 2
+lane_pos = 2
 
 [sub_resource type="Resource" id="Resource_8qb5t"]
 script = ExtResource("1_3t8to")
 ingridient = ExtResource("4_jhkhn")
 beat_number = 4
-lane_pos = Array[int]([1])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_lxp65"]
 script = ExtResource("1_3t8to")
 ingridient = ExtResource("4_jhkhn")
 beat_number = 5
-lane_pos = Array[int]([1])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_6gsmw"]
 script = ExtResource("1_3t8to")
-ingridient = ExtResource("4_jhkhn")
-beat_number = 7
-lane_pos = Array[int]([0, 1, 2])
+ingridient = ExtResource("5_2xwj5")
+beat_number = 6
+lane_pos = 1
 
 [sub_resource type="Resource" id="Resource_b6560"]
 script = ExtResource("1_3t8to")
 ingridient = ExtResource("4_jhkhn")
 beat_number = 11
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_ikvur"]
 script = ExtResource("1_3t8to")
 ingridient = ExtResource("4_jhkhn")
 beat_number = 12
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_72oct"]
 script = ExtResource("1_3t8to")
 ingridient = ExtResource("4_jhkhn")
 beat_number = 14
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_tk4md"]
 script = ExtResource("1_3t8to")
 ingridient = ExtResource("4_jhkhn")
 beat_number = 15
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_fb1sw"]
 script = ExtResource("1_3t8to")
 ingridient = ExtResource("4_jhkhn")
 beat_number = 18
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_qcfyv"]
 script = ExtResource("1_3t8to")
 ingridient = ExtResource("4_jhkhn")
 beat_number = 21
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_vf5rr"]
 script = ExtResource("1_3t8to")
 ingridient = ExtResource("4_jhkhn")
 beat_number = 22
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_r2xoh"]
 script = ExtResource("1_3t8to")
 ingridient = ExtResource("4_jhkhn")
 beat_number = 27
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_kbwn7"]
 script = ExtResource("1_3t8to")
 ingridient = ExtResource("4_jhkhn")
 beat_number = 28
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_nlhme"]
 script = ExtResource("1_3t8to")
 ingridient = ExtResource("4_jhkhn")
 beat_number = 29
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_j40ku"]
 script = ExtResource("1_3t8to")
 ingridient = ExtResource("4_jhkhn")
 beat_number = 30
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [resource]
 script = ExtResource("2_bbl7o")

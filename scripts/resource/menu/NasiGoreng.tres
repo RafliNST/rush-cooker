@@ -11,67 +11,67 @@
 script = ExtResource("1_36g0l")
 ingridient = ExtResource("5_404nj")
 beat_number = 2
-lane_pos = Array[int]([0])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_d1f15"]
 script = ExtResource("1_36g0l")
 ingridient = ExtResource("4_cahbe")
 beat_number = 3
-lane_pos = Array[int]([1])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_cufln"]
 script = ExtResource("1_36g0l")
 ingridient = ExtResource("4_cahbe")
 beat_number = 4
-lane_pos = Array[int]([1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_ry86l"]
 script = ExtResource("1_36g0l")
 ingridient = ExtResource("4_cahbe")
 beat_number = 6
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_ljxfk"]
 script = ExtResource("1_36g0l")
 ingridient = ExtResource("4_cahbe")
 beat_number = 7
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_uubst"]
 script = ExtResource("1_36g0l")
 ingridient = ExtResource("4_cahbe")
 beat_number = 8
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_bkv5b"]
 script = ExtResource("1_36g0l")
 ingridient = ExtResource("4_cahbe")
 beat_number = 11
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_57328"]
 script = ExtResource("1_36g0l")
 ingridient = ExtResource("4_cahbe")
 beat_number = 15
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_6x54s"]
 script = ExtResource("1_36g0l")
 ingridient = ExtResource("5_404nj")
 beat_number = 25
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_prd12"]
 script = ExtResource("1_36g0l")
 ingridient = ExtResource("4_cahbe")
 beat_number = 37
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_6pq3j"]
 script = ExtResource("1_36g0l")
 ingridient = ExtResource("4_cahbe")
 beat_number = 55
-lane_pos = Array[int]([0, 1, 2])
+lane_pos = 0
 
 [resource]
 script = ExtResource("2_gsjgc")

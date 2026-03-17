@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bntavy6d62b4f"]
+[gd_scene load_steps=5 format=3 uid="uid://bntavy6d62b4f"]
 
 [ext_resource type="Script" path="res://scripts/conductor.gd" id="1_qpflo"]
 [ext_resource type="Resource" uid="uid://sy5okdw5dcy1" path="res://scripts/resource/menu/NasiKuning.tres" id="2_hwq2r"]
+[ext_resource type="PackedScene" uid="uid://c8ykqn03xecew" path="res://scenes/ingridient.tscn" id="3_0diex"]
 [ext_resource type="PackedScene" uid="uid://c5g2ocaxet8d" path="res://scenes/note_spawner.tscn" id="4_e2t46"]
 
 [node name="Conductor" type="Node2D"]
@@ -9,6 +10,7 @@ script = ExtResource("1_qpflo")
 offset = 2.0
 current_menu = ExtResource("2_hwq2r")
 other_menu = ExtResource("2_hwq2r")
+note_scene = ExtResource("3_0diex")
 
 [node name="AudioStream" type="AudioStreamPlayer" parent="."]
 
@@ -16,5 +18,5 @@ other_menu = ExtResource("2_hwq2r")
 
 [node name="NoteTimer" type="Timer" parent="."]
 
-[connection signal="music_beat" from="." to="NoteSpawner" method="_on_conductor_music_beat"]
+[connection signal="track_changed" from="." to="NoteSpawner" method="_on_conductor_track_changed"]
 [connection signal="timeout" from="NoteTimer" to="." method="_on_timeout"]

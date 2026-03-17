@@ -2,15 +2,9 @@ extends Node2D
 
 class_name NoteSpawner
 
-@export var note_scene: PackedScene
-
 @onready var left_lane: Lane = $LeftLane
 @onready var center_lane: Lane = $CenterLane
 @onready var right_lane: Lane = $RightLane
-
-@onready var left_lane_target := $LeftLane/TargetPos
-@onready var center_lane_target := $CenterLane/TargetPos
-@onready var right_lane_target := $RightLane/TargetPos
 
 func _ready() -> void:
 	var rhythm_state = StateMachine.get_node("RhythmState")
@@ -18,6 +12,10 @@ func _ready() -> void:
 	rhythm_state.left_action.connect(left_lane.action_pressed)
 	rhythm_state.center_action.connect(center_lane.action_pressed)
 	rhythm_state.right_action.connect(right_lane.action_pressed)
+	
+	Conductor.Instance.music_beat.connect(left_lane.spawn_note)
+	Conductor.Instance.music_beat.connect(center_lane.spawn_note)
+	Conductor.Instance.music_beat.connect(right_lane.spawn_note)
 
 func _exit_tree() -> void:
 	var rhythm_state = StateMachine.get_node("RhythmState")
@@ -26,25 +24,15 @@ func _exit_tree() -> void:
 	rhythm_state.center_action.disconnect(center_lane.action_pressed)
 	rhythm_state.right_action.disconnect(right_lane.action_pressed)
 
-func _on_conductor_music_beat(number: int, item: MenuItem) -> void:
-	if item.lane_pos.has(Menu.LanePosition.LEFT):
-		var note = note_scene.instantiate()
-		left_lane.add_child(note)
-		note.initialize(item.ingridient, number,left_lane_target.position)
-		
-		left_lane.notes.append(note)
-		print("Left Added: " + str(left_lane.notes.size()))
-	if item.lane_pos.has(Menu.LanePosition.CENTER):
-		var note = note_scene.instantiate()
-		center_lane.add_child(note)
-		note.initialize(item.ingridient, number,center_lane_target.position)
-		
-		center_lane.notes.append(note)
-		print("Center Added: " + str(left_lane.notes.size()))
-	if item.lane_pos.has(Menu.LanePosition.RIGHT):
-		var note = note_scene.instantiate()
-		right_lane.add_child(note)
-		note.initialize(item.ingridient, number,right_lane_target.position)
-		
-		right_lane.notes.append(note)
-		print("Right Added: " + str(left_lane.notes.size()))
+func _on_conductor_track_changed() -> void:
+	left_lane.notes.clear()
+	center_lane.notes.clear()
+	right_lane.notes.clear()
+	
+	for item in Conductor.Instance.current_menu.ingredients:
+		if item.lane_pos == Menu.LanePosition.LEFT:
+			left_lane.notes[item.beat_number] = item
+		elif item.lane_pos == Menu.LanePosition.CENTER:
+			center_lane.notes[item.beat_number] = item
+		else:
+			right_lane.notes[item.beat_number] = item
