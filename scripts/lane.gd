@@ -20,7 +20,6 @@ func action_pressed():
 			
 func spawn_note(beat_number: int):	
 	if notes.has(beat_number):
-		print("Spawn Pada: " + self.name + " : " + str(beat_number))
 		var note = Conductor.Instance.note_scene.instantiate()
 		add_child(note)
 		note.initialize(notes[beat_number].ingridient, beat_number,target_pos.position)

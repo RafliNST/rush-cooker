@@ -14,13 +14,13 @@ var beat_number := 0
 var process := 0.0
 
 func _process(delta: float) -> void:
-	process = beat_number - Conductor.Instance.get_current_beat_pos()
+	process = (beat_number - Conductor.Instance.get_current_beat_pos()) / Conductor.Instance.offset
 	process = clamp(process, 0,1)
 	position = target_pos.lerp(spawn_pos, process)
 
 func initialize(item: Ingridient, number: int, targetF: Vector2):
 	ingridient = item
-	beat_number = number
+	beat_number = Conductor.Instance.offset + number
 	
 	sprite_renderer.texture = item.sprite
 	audio_output.stream = item.SFX

@@ -37,7 +37,7 @@ func get_music_progress() -> float:
 	return audio_player.get_playback_position()
 	
 func get_current_beat_pos() -> float:
-	return get_music_progress() / (note_timer.wait_time * offset)
+	return get_music_progress() / note_timer.wait_time
 
 func setup_timer():
 	note_timer.wait_time = 60.0 / current_menu.BPM
