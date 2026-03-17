@@ -1,37 +1,61 @@
-[gd_scene load_steps=3 format=3 uid="uid://ccjqxopub3fl"]
+[gd_scene load_steps=7 format=3 uid="uid://wmb7rrotmfad"]
 
-[ext_resource type="PackedScene" uid="uid://bntavy6d62b4f" path="res://scenes/conductor.tscn" id="1_mbljc"]
-[ext_resource type="Texture2D" uid="uid://cibhmqhbvo8ch" path="res://icon.svg" id="2_sd5oi"]
+[ext_resource type="Texture2D" uid="uid://coppqiy5xop5x" path="res://textures/SunsetParalax/1.png" id="1_a1gti"]
+[ext_resource type="Script" path="res://scripts/paralax/paralax.gd" id="1_mhlsh"]
+[ext_resource type="Texture2D" uid="uid://dsfabwpfwycx3" path="res://textures/SunsetParalax/2.png" id="2_8ay5t"]
+[ext_resource type="Texture2D" uid="uid://bv5cunuq0qju3" path="res://textures/SunsetParalax/5.png" id="3_jj70m"]
+[ext_resource type="Texture2D" uid="uid://dcqkiy8jnji4r" path="res://textures/SunsetParalax/8.png" id="3_xryhh"]
+[ext_resource type="Texture2D" uid="uid://cro7mrnok68yn" path="res://textures/SunsetParalax/4.png" id="4_yorsk"]
 
 [node name="Game" type="Node2D"]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="ParalaxBackground" type="Node2D" parent="."]
 
-[node name="RhythmContainer" type="PanelContainer" parent="HBoxContainer"]
-layout_mode = 2
+[node name="Mountain" type="Parallax2D" parent="ParalaxBackground"]
+scale = Vector2(4, 4)
+scroll_scale = Vector2(0.1, 1)
+repeat_size = Vector2(320, 0)
+repeat_times = 3
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer/RhythmContainer"]
-layout_mode = 2
+[node name="Sprite2D" type="Sprite2D" parent="ParalaxBackground/Mountain"]
+texture_repeat = 2
+texture = ExtResource("1_a1gti")
 
-[node name="SubViewport" type="SubViewport" parent="HBoxContainer/RhythmContainer/SubViewportContainer"]
-handle_input_locally = false
-canvas_item_default_texture_filter = 0
-size = Vector2i(300, 648)
-render_target_update_mode = 4
+[node name="Mountain2" type="Parallax2D" parent="ParalaxBackground"]
+scale = Vector2(4, 4)
+scroll_scale = Vector2(0.2, 1)
+repeat_size = Vector2(320, 0)
+repeat_times = 3
 
-[node name="Conductor" parent="HBoxContainer/RhythmContainer/SubViewportContainer/SubViewport" instance=ExtResource("1_mbljc")]
-position = Vector2(150, -200)
+[node name="Sprite2D" type="Sprite2D" parent="ParalaxBackground/Mountain2"]
+texture_repeat = 2
+texture = ExtResource("2_8ay5t")
 
-[node name="GameContainer" type="PanelContainer" parent="HBoxContainer"]
-layout_mode = 2
+[node name="Mountain3" type="Parallax2D" parent="ParalaxBackground"]
+scale = Vector2(4, 4)
+scroll_scale = Vector2(0.5, 1)
+repeat_size = Vector2(320, 0)
+repeat_times = 3
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer/GameContainer"]
-layout_mode = 2
+[node name="Sprite2D" type="Sprite2D" parent="ParalaxBackground/Mountain3"]
+texture_repeat = 2
+texture = ExtResource("3_jj70m")
 
-[node name="SubViewport" type="SubViewport" parent="HBoxContainer/GameContainer/SubViewportContainer"]
-size = Vector2i(852, 648)
+[node name="Mountain4" type="Parallax2D" parent="ParalaxBackground"]
+scale = Vector2(4, 4)
+scroll_scale = Vector2(0.7, 1)
+repeat_size = Vector2(320, 0)
+repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/GameContainer/SubViewportContainer/SubViewport"]
-texture = ExtResource("2_sd5oi")
+[node name="Sprite2D" type="Sprite2D" parent="ParalaxBackground/Mountain4"]
+texture_repeat = 2
+texture = ExtResource("3_xryhh")
+
+[node name="PlayerTenant" type="Node2D" parent="."]
+visible = false
+
+[node name="TenantSprite" type="Sprite2D" parent="PlayerTenant"]
+texture = ExtResource("4_yorsk")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("1_mhlsh")

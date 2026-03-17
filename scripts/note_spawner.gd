@@ -12,6 +12,20 @@ class_name NoteSpawner
 @onready var center_lane_target := $CenterLane/TargetPos
 @onready var right_lane_target := $RightLane/TargetPos
 
+func _ready() -> void:
+	var rhythm_state = StateMachine.get_node("RhythmState")
+	
+	rhythm_state.left_action.connect(left_lane.action_pressed)
+	rhythm_state.center_action.connect(center_lane.action_pressed)
+	rhythm_state.right_action.connect(right_lane.action_pressed)
+
+func _exit_tree() -> void:
+	var rhythm_state = StateMachine.get_node("RhythmState")
+	
+	rhythm_state.left_action.disconnect(left_lane.action_pressed)
+	rhythm_state.center_action.disconnect(center_lane.action_pressed)
+	rhythm_state.right_action.disconnect(right_lane.action_pressed)
+
 func _on_conductor_music_beat(number: int, item: MenuItem) -> void:
 	if item.lane_pos.has(Menu.LanePosition.LEFT):
 		var note = note_scene.instantiate()

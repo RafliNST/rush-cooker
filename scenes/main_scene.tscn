@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccjqxopub3fl"]
+
+[ext_resource type="PackedScene" uid="uid://bntavy6d62b4f" path="res://scenes/conductor.tscn" id="1_pbw8e"]
+[ext_resource type="Resource" uid="uid://dl1o8yi0g2k7x" path="res://scripts/resource/menu/MiGoreng.tres" id="2_4ppdc"]
+[ext_resource type="PackedScene" uid="uid://wmb7rrotmfad" path="res://scenes/game.tscn" id="3_dm5ba"]
+
+[node name="MainScene" type="Node2D"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RhythmContainer" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer/RhythmContainer"]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/RhythmContainer/SubViewportContainer"]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(300, 680)
+render_target_update_mode = 4
+
+[node name="Conductor" parent="HBoxContainer/RhythmContainer/SubViewportContainer/SubViewport" instance=ExtResource("1_pbw8e")]
+position = Vector2(150, -150)
+current_menu = ExtResource("2_4ppdc")
+other_menu = ExtResource("2_4ppdc")
+
+[node name="GameContainer" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer/GameContainer"]
+texture_filter = 1
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/GameContainer/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(852, 680)
+render_target_update_mode = 4
+
+[node name="Game" parent="HBoxContainer/GameContainer/SubViewportContainer/SubViewport" instance=ExtResource("3_dm5ba")]
+texture_filter = 1

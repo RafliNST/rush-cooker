@@ -14,6 +14,15 @@ config/name="rush-coocker"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+StateMachine="*res://scenes-movable/state_machine.tscn"
+
+[display]
+
+window/size/viewport_height=680
+window/vsync/vsync_mode=0
+
 [input]
 
 beat_left_press={
