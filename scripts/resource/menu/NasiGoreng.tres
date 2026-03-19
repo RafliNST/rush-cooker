@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="Menu" load_steps=18 format=3 uid="uid://bqv34k7us7n7u"]
+[gd_resource type="Resource" script_class="Menu" load_steps=19 format=3 uid="uid://bqv34k7us7n7u"]
 
-[ext_resource type="AudioStream" uid="uid://ccxo57o0ptrp5" path="res://musics/CobaLebihPanjang.mp3" id="1_26hca"]
+[ext_resource type="AudioStream" uid="uid://7brys7450o7t" path="res://musics/dummy/ヨルシカ - 藍二乗.mp3" id="1_0a2ai"]
 [ext_resource type="Script" path="res://scripts/resource/menu_item/menu_item.gd" id="1_36g0l"]
 [ext_resource type="Texture2D" uid="uid://cibhmqhbvo8ch" path="res://icon.svg" id="1_ahdfj"]
 [ext_resource type="Script" path="res://scripts/resource/menu/menu.gd" id="2_gsjgc"]
@@ -27,7 +27,7 @@ lane_pos = 0
 
 [sub_resource type="Resource" id="Resource_ry86l"]
 script = ExtResource("1_36g0l")
-ingridient = ExtResource("4_cahbe")
+ingridient = ExtResource("5_404nj")
 beat_number = 6
 lane_pos = 0
 
@@ -73,10 +73,16 @@ ingridient = ExtResource("4_cahbe")
 beat_number = 55
 lane_pos = 0
 
+[sub_resource type="Resource" id="Resource_ob8bu"]
+script = ExtResource("1_36g0l")
+ingridient = ExtResource("5_404nj")
+beat_number = 55
+lane_pos = 1
+
 [resource]
 script = ExtResource("2_gsjgc")
 name = "Nasi Goreng"
 icon = ExtResource("1_ahdfj")
-BGM = ExtResource("1_26hca")
-BPM = 120
-ingredients = Array[ExtResource("1_36g0l")]([SubResource("Resource_8oh8m"), SubResource("Resource_d1f15"), SubResource("Resource_cufln"), SubResource("Resource_ry86l"), SubResource("Resource_ljxfk"), SubResource("Resource_uubst"), SubResource("Resource_bkv5b"), SubResource("Resource_57328"), SubResource("Resource_6x54s"), SubResource("Resource_prd12"), SubResource("Resource_6pq3j")])
+BGM = ExtResource("1_0a2ai")
+BPM = 210
+ingredients = Array[ExtResource("1_36g0l")]([SubResource("Resource_8oh8m"), SubResource("Resource_d1f15"), SubResource("Resource_cufln"), SubResource("Resource_ry86l"), SubResource("Resource_ljxfk"), SubResource("Resource_uubst"), SubResource("Resource_bkv5b"), SubResource("Resource_57328"), SubResource("Resource_6x54s"), SubResource("Resource_prd12"), SubResource("Resource_6pq3j"), SubResource("Resource_ob8bu")])

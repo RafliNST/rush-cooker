@@ -15,3 +15,8 @@ scale = Vector2(4, 4)
 texture = SubResource("AtlasTexture_1uuhi")
 
 [node name="AudioOutput" type="AudioStreamPlayer" parent="."]
+
+[node name="DestroyTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="DestroyTimer" to="." method="_on_destroy_timer_timeout"]

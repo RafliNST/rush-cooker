@@ -2,14 +2,13 @@
 
 [ext_resource type="Script" path="res://scripts/note_spawner.gd" id="1_uh6wd"]
 [ext_resource type="PackedScene" uid="uid://civonus0xu7kq" path="res://scenes/lane.tscn" id="2_4a2i1"]
-[ext_resource type="PackedScene" uid="uid://c8ykqn03xecew" path="res://scenes/ingridient.tscn" id="2_4uboq"]
 [ext_resource type="AudioStream" uid="uid://i8xl6jbbeyyn" path="res://musics/SFX/Miscellaneous/misc-pointer-static.mp3" id="4_uq444"]
 [ext_resource type="AudioStream" uid="uid://cpil4acd1fyyl" path="res://musics/SFX/Miscellaneous/misc-cinematic-buildup.mp3" id="5_vbw4j"]
 [ext_resource type="AudioStream" uid="uid://c2i8pcow3f8oh" path="res://musics/SFX/Miscellaneous/misc-buzz.mp3" id="6_dnv26"]
+[ext_resource type="Script" path="res://scripts/score_manager.gd" id="6_vr3qn"]
 
 [node name="NoteSpawner" type="Node2D"]
 script = ExtResource("1_uh6wd")
-note_scene = ExtResource("2_4uboq")
 
 [node name="LeftLane" parent="." instance=ExtResource("2_4a2i1")]
 position = Vector2(-100, 0)
@@ -26,3 +25,8 @@ position = Vector2(100, 0)
 audio = ExtResource("6_dnv26")
 action_name = "beat_right_press"
 lane_position = 2
+
+[node name="ScoreManager" type="Node" parent="."]
+script = ExtResource("6_vr3qn")
+
+[connection signal="beat_triggered" from="ScoreManager" to="ScoreManager" method="_on_beat_triggered"]

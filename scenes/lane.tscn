@@ -26,4 +26,6 @@ position = Vector2(0, 450)
 scale = Vector2(6.5, 56)
 texture = SubResource("AtlasTexture_ks5t5")
 
+[node name="NotesCollection" type="Node2D" parent="."]
+
 [connection signal="on_note_beat" from="." to="." method="_on_on_note_beat"]

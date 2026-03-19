@@ -29,8 +29,8 @@ func _exit_tree() -> void:
 func _ready() -> void:
 	change_track(current_menu)
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_select"):
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_select"):
 		change_track(other_menu)
 
 func get_music_progress() -> float:
@@ -60,6 +60,5 @@ func change_track(menu: Menu):
 	track_changed.emit()
 
 func _on_timeout() -> void:
-	if beat_arr_pos < current_menu.ingredients.size():
-		music_beat.emit(beat_number)
+	music_beat.emit(beat_number)
 	beat_number += 1

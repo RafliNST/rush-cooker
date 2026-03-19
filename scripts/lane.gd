@@ -11,15 +11,16 @@ signal on_note_beat(lane: Menu.LanePosition, shot: AudioStream)
 
 @onready var target_pos := $TargetPos
 @onready var audio_stream := $AudioStream
+@onready var notes_collection := $NotesCollection
+
 var notes: Dictionary
 
 func action_pressed():
-	if notes.size() > 0:
-		audio_stream.stream = notes.values()[0].ingridient.SFX
-		audio_stream.play()
-			
+	if notes_collection.get_child_count() > 0:
+		notes_collection.get_child(0).play_beat()
+
 func spawn_note(beat_number: int):	
 	if notes.has(beat_number):
 		var note = Conductor.Instance.note_scene.instantiate()
-		add_child(note)
+		notes_collection.add_child(note)
 		note.initialize(notes[beat_number].ingridient, beat_number,target_pos.position)
