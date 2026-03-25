@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvescbljf7508"]
+
+[ext_resource type="Texture2D" uid="uid://cibhmqhbvo8ch" path="res://icon.svg" id="1_awwxo"]
+
+[node name="MenuSelector" type="Control"]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ActivatorSelection" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "Mi Goreng"
+icon = ExtResource("1_awwxo")
+alignment = 0
+icon_alignment = 2
+expand_icon = true

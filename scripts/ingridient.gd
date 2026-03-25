@@ -54,7 +54,7 @@ func initialize(item: Ingridient, number: int, targetF: Vector2):
 	destroy_timer.wait_time = .23
 
 func play_beat():
-	if score_state == SCORE_STATE.FORBID:
+	if score_state == SCORE_STATE.FORBID || has_emit:
 		return
 	
 	on_destroy = true
@@ -63,6 +63,5 @@ func play_beat():
 	destroy_timer.start()
 
 func _on_destroy_timer_timeout() -> void:
-	#ScoreManager.Instance.beat_triggered.emit(score_state)
 	ScoreManager.Instance.beat_triggered.emit(score_state if has_emit else SCORE_STATE.BAD)
 	queue_free()

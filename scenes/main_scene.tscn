@@ -1,13 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccjqxopub3fl"]
+[gd_scene load_steps=6 format=3 uid="uid://ccjqxopub3fl"]
 
 [ext_resource type="PackedScene" uid="uid://bntavy6d62b4f" path="res://scenes/conductor.tscn" id="1_pbw8e"]
-[ext_resource type="Resource" uid="uid://debhai37epfkn" path="res://scripts/resource/menu/MiRebus.tres" id="2_48mgq"]
+[ext_resource type="Resource" uid="uid://bqv34k7us7n7u" path="res://scripts/resource/menu/NasiGoreng.tres" id="2_xfkj4"]
+[ext_resource type="Resource" uid="uid://dl1o8yi0g2k7x" path="res://scripts/resource/menu/MiGoreng.tres" id="3_2wbne"]
 [ext_resource type="PackedScene" uid="uid://wmb7rrotmfad" path="res://scenes/game.tscn" id="3_dm5ba"]
+[ext_resource type="PackedScene" uid="uid://pddvifau75jp" path="res://scenes/UIs/rhythm_control.tscn" id="5_7sssm"]
 
-[node name="MainScene" type="Node2D"]
+[node name="MainScene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 texture_filter = 1
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
@@ -25,8 +30,9 @@ render_target_update_mode = 4
 
 [node name="Conductor" parent="HBoxContainer/RhythmContainer/SubViewportContainer/SubViewport" instance=ExtResource("1_pbw8e")]
 position = Vector2(150, -160)
-offset = 5.0
-other_menu = ExtResource("2_48mgq")
+offset = 4.0
+current_menu = ExtResource("3_2wbne")
+other_menu = ExtResource("2_xfkj4")
 
 [node name="GameContainer" type="PanelContainer" parent="HBoxContainer"]
 layout_mode = 2
@@ -42,3 +48,6 @@ render_target_update_mode = 4
 
 [node name="Game" parent="HBoxContainer/GameContainer/SubViewportContainer/SubViewport" instance=ExtResource("3_dm5ba")]
 texture_filter = 1
+
+[node name="RhythmControl" parent="." instance=ExtResource("5_7sssm")]
+layout_mode = 1
