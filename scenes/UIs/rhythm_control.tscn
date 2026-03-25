@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bvescbljf7508" path="res://scenes/UIs/menu-selector.tscn" id="1_wev1h"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="RhythmControl" type="CanvasLayer"]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

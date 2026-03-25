@@ -8,6 +8,7 @@ signal music_beat(beat_number: int)
 static var Instance: Conductor
 
 @export var offset := 1.0
+@export var beat_delay := 2.0
 
 @export var current_menu: Menu
 @export var other_menu: Menu

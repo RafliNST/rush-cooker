@@ -1,52 +1,47 @@
-[gd_scene load_steps=6 format=3 uid="uid://ccjqxopub3fl"]
+[gd_scene load_steps=5 format=3 uid="uid://ccjqxopub3fl"]
 
 [ext_resource type="PackedScene" uid="uid://bntavy6d62b4f" path="res://scenes/conductor.tscn" id="1_pbw8e"]
-[ext_resource type="Resource" uid="uid://bqv34k7us7n7u" path="res://scripts/resource/menu/NasiGoreng.tres" id="2_xfkj4"]
-[ext_resource type="Resource" uid="uid://dl1o8yi0g2k7x" path="res://scripts/resource/menu/MiGoreng.tres" id="3_2wbne"]
+[ext_resource type="Resource" uid="uid://debhai37epfkn" path="res://scripts/resource/menu/MiRebus.tres" id="2_ousdu"]
 [ext_resource type="PackedScene" uid="uid://wmb7rrotmfad" path="res://scenes/game.tscn" id="3_dm5ba"]
 [ext_resource type="PackedScene" uid="uid://pddvifau75jp" path="res://scenes/UIs/rhythm_control.tscn" id="5_7sssm"]
 
-[node name="MainScene" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="MainScene" type="Node2D"]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="GameContainer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RhythmScene" type="SubViewportContainer" parent="GameContainer/HBoxContainer"]
 texture_filter = 1
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="RhythmContainer" type="PanelContainer" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer/RhythmContainer"]
-layout_mode = 2
-
-[node name="SubViewport" type="SubViewport" parent="HBoxContainer/RhythmContainer/SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="GameContainer/HBoxContainer/RhythmScene"]
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 size = Vector2i(300, 680)
 render_target_update_mode = 4
 
-[node name="Conductor" parent="HBoxContainer/RhythmContainer/SubViewportContainer/SubViewport" instance=ExtResource("1_pbw8e")]
-position = Vector2(150, -160)
+[node name="Conductor" parent="GameContainer/HBoxContainer/RhythmScene/SubViewport" instance=ExtResource("1_pbw8e")]
 offset = 4.0
-current_menu = ExtResource("3_2wbne")
-other_menu = ExtResource("2_xfkj4")
+other_menu = ExtResource("2_ousdu")
 
-[node name="GameContainer" type="PanelContainer" parent="HBoxContainer"]
-layout_mode = 2
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer/GameContainer"]
+[node name="TenantScene" type="SubViewportContainer" parent="GameContainer/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
 
-[node name="SubViewport" type="SubViewport" parent="HBoxContainer/GameContainer/SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="GameContainer/HBoxContainer/TenantScene"]
 handle_input_locally = false
+canvas_item_default_texture_filter = 0
 size = Vector2i(852, 680)
 render_target_update_mode = 4
 
-[node name="Game" parent="HBoxContainer/GameContainer/SubViewportContainer/SubViewport" instance=ExtResource("3_dm5ba")]
-texture_filter = 1
+[node name="Game" parent="GameContainer/HBoxContainer/TenantScene/SubViewport" instance=ExtResource("3_dm5ba")]
 
 [node name="RhythmControl" parent="." instance=ExtResource("5_7sssm")]
+offset = Vector2(-10, 10)
+transform = Transform2D(1, 0, 0, 1, -10, 10)

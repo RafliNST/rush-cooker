@@ -38,7 +38,7 @@ var process := 0.0 :
 		return process
 
 func _process(delta: float) -> void:
-	process = (beat_number - Conductor.Instance.get_current_beat_pos()) / Conductor.Instance.offset
+	process = (beat_number - Conductor.Instance.get_current_beat_pos()) / Conductor.Instance.beat_delay
 	position = target_pos.lerp(spawn_pos, process)
 
 func initialize(item: Ingridient, number: int, targetF: Vector2):
