@@ -50,4 +50,3 @@ render_target_update_mode = 4
 texture_filter = 1
 
 [node name="RhythmControl" parent="." instance=ExtResource("5_7sssm")]
-layout_mode = 1

@@ -1,46 +1,42 @@
 [gd_scene load_steps=2 format=3 uid="uid://pddvifau75jp"]
 
-[ext_resource type="PackedScene" uid="uid://bvescbljf7508" path="res://scenes/UIs/menu-selector.tscn" id="2_a3xbl"]
+[ext_resource type="PackedScene" uid="uid://bvescbljf7508" path="res://scenes/UIs/menu-selector.tscn" id="1_wev1h"]
 
-[node name="RhythmControl" type="Control"]
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 15
+anchor_left = 0.8
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MenuSelection" type="Control" parent="."]
-layout_mode = 1
-anchor_left = 0.75
-anchor_top = 0.02
-anchor_right = 0.98
-anchor_bottom = 0.98
+offset_left = 0.399963
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="H_MenuSelection" type="Label" parent="MenuSelection"]
+[node name="Label" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 31.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 22
 text = "Select Menu to Cook"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MenuSelector" type="VBoxContainer" parent="MenuSelection"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
+anchor_top = 0.046
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 31.0
-grow_horizontal = 2
+offset_top = -0.280003
+grow_horizontal = 0
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="MenuSelector" parent="MenuSelection/MenuSelector" instance=ExtResource("2_a3xbl")]
+[node name="MenuSelector" parent="Control/VBoxContainer" instance=ExtResource("1_wev1h")]
 layout_mode = 2
 
-[node name="MenuSelector2" parent="MenuSelection/MenuSelector" instance=ExtResource("2_a3xbl")]
+[node name="MenuSelector2" parent="Control/VBoxContainer" instance=ExtResource("1_wev1h")]
 layout_mode = 2
