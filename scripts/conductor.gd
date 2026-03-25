@@ -2,7 +2,7 @@ extends Node2D
 
 class_name Conductor
 
-signal track_changed
+signal track_changed(menu: Menu)
 signal music_beat(beat_number: int)
 
 static var Instance: Conductor
@@ -10,8 +10,7 @@ static var Instance: Conductor
 @export var offset := 1.0
 @export var beat_delay := 2.0
 
-@export var current_menu: Menu
-@export var other_menu: Menu
+var current_menu: Menu
 
 @onready var audio_player := $AudioStream
 @onready var note_timer := $NoteTimer
@@ -28,11 +27,11 @@ func _exit_tree() -> void:
 	Instance = null
 
 func _ready() -> void:
-	change_track(current_menu)
+	if current_menu != null:
+		change_track(current_menu)
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_select"):
-		change_track(other_menu)
+	pass
 
 func get_music_progress() -> float:
 	return audio_player.get_playback_position()
@@ -58,7 +57,6 @@ func change_track(menu: Menu):
 	
 	setup_timer()
 	play_music()
-	track_changed.emit()
 
 func _on_timeout() -> void:
 	music_beat.emit(beat_number)

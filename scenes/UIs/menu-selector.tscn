@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvescbljf7508"]
+[gd_scene load_steps=3 format=3 uid="uid://bvescbljf7508"]
 
 [ext_resource type="Texture2D" uid="uid://cibhmqhbvo8ch" path="res://icon.svg" id="1_awwxo"]
+[ext_resource type="Script" path="res://scenes/UIs/menu_selector.gd" id="1_purd4"]
 
 [node name="MenuSelector" type="Control"]
 custom_minimum_size = Vector2(0, 37)
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_purd4")
 
 [node name="ActivatorSelection" type="Button" parent="."]
 layout_mode = 1
@@ -24,3 +26,5 @@ icon = ExtResource("1_awwxo")
 alignment = 0
 icon_alignment = 2
 expand_icon = true
+
+[connection signal="pressed" from="ActivatorSelection" to="." method="_on_activator_selection_pressed"]
