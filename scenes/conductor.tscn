@@ -14,7 +14,7 @@ note_scene = ExtResource("3_0diex")
 [node name="AudioStream" type="AudioStreamPlayer" parent="."]
 
 [node name="NoteSpawner" parent="." instance=ExtResource("4_e2t46")]
-position = Vector2(0, -550)
+position = Vector2(0, -500)
 
 [node name="NoteTimer" type="Timer" parent="."]
 

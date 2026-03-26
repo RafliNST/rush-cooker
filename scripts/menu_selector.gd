@@ -2,12 +2,11 @@ extends Control
 
 @onready var activator := $ActivatorSelection
 
-@export var menu : Menu
+var menu : Menu
 
-func _ready() -> void:
-	if menu == null:
-		return
-		
+func initialize(menu: Menu):
+	self.menu = menu
+	
 	activator.text = menu.name
 	activator.icon = menu.icon
 

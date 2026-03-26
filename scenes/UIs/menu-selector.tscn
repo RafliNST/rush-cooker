@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvescbljf7508"]
 
 [ext_resource type="Texture2D" uid="uid://cibhmqhbvo8ch" path="res://icon.svg" id="1_awwxo"]
-[ext_resource type="Script" path="res://scenes/UIs/menu_selector.gd" id="1_purd4"]
+[ext_resource type="Script" path="res://scripts/menu_selector.gd" id="1_purd4"]
 
 [node name="MenuSelector" type="Control"]
 custom_minimum_size = Vector2(0, 37)

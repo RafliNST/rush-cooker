@@ -1,12 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://pddvifau75jp"]
+[gd_scene load_steps=8 format=3 uid="uid://pddvifau75jp"]
 
+[ext_resource type="Script" path="res://scripts/rhythm_control.gd" id="1_e768n"]
 [ext_resource type="PackedScene" uid="uid://bvescbljf7508" path="res://scenes/UIs/menu-selector.tscn" id="1_wev1h"]
 [ext_resource type="Resource" uid="uid://dl1o8yi0g2k7x" path="res://scripts/resource/menu/MiGoreng.tres" id="2_ijsoh"]
+[ext_resource type="Script" path="res://scripts/resource/menu/menu.gd" id="3_7fqbc"]
 [ext_resource type="Resource" uid="uid://debhai37epfkn" path="res://scripts/resource/menu/MiRebus.tres" id="3_gsmhx"]
 [ext_resource type="Resource" uid="uid://bqv34k7us7n7u" path="res://scripts/resource/menu/NasiGoreng.tres" id="4_6j0es"]
 [ext_resource type="Resource" uid="uid://sy5okdw5dcy1" path="res://scripts/resource/menu/NasiKuning.tres" id="5_jufx0"]
 
 [node name="RhythmControl" type="CanvasLayer"]
+script = ExtResource("1_e768n")
+menu_selector = ExtResource("1_wev1h")
+menus = Array[ExtResource("3_7fqbc")]([ExtResource("2_ijsoh"), ExtResource("3_gsmhx"), ExtResource("4_6j0es"), ExtResource("5_jufx0")])
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -38,19 +43,3 @@ offset_top = -0.280003
 grow_horizontal = 0
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
-
-[node name="MenuSelector" parent="Control/VBoxContainer" instance=ExtResource("1_wev1h")]
-layout_mode = 2
-menu = ExtResource("2_ijsoh")
-
-[node name="MenuSelector2" parent="Control/VBoxContainer" instance=ExtResource("1_wev1h")]
-layout_mode = 2
-menu = ExtResource("3_gsmhx")
-
-[node name="MenuSelector3" parent="Control/VBoxContainer" instance=ExtResource("1_wev1h")]
-layout_mode = 2
-menu = ExtResource("4_6j0es")
-
-[node name="MenuSelector4" parent="Control/VBoxContainer" instance=ExtResource("1_wev1h")]
-layout_mode = 2
-menu = ExtResource("5_jufx0")
