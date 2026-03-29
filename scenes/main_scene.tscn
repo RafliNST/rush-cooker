@@ -9,35 +9,37 @@
 [node name="GameContainer" type="CanvasLayer" parent="."]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GameContainer"]
-anchors_preset = 15
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -1456.0
+offset_bottom = 680.0
+grow_horizontal = 0
+alignment = 2
 
 [node name="RhythmScene" type="SubViewportContainer" parent="GameContainer/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
+size_flags_horizontal = 0
 
 [node name="SubViewport" type="SubViewport" parent="GameContainer/HBoxContainer/RhythmScene"]
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 size = Vector2i(300, 680)
-render_target_update_mode = 4
 
 [node name="Conductor" parent="GameContainer/HBoxContainer/RhythmScene/SubViewport" instance=ExtResource("1_pbw8e")]
-offset = 4.0
+offset = 5.0
 beat_delay = 3.0
 
 [node name="TenantScene" type="SubViewportContainer" parent="GameContainer/HBoxContainer"]
 texture_filter = 1
 layout_mode = 2
+size_flags_horizontal = 8
 
 [node name="SubViewport" type="SubViewport" parent="GameContainer/HBoxContainer/TenantScene"]
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 size = Vector2i(852, 680)
-render_target_update_mode = 4
 
 [node name="Game" parent="GameContainer/HBoxContainer/TenantScene/SubViewport" instance=ExtResource("3_dm5ba")]
 

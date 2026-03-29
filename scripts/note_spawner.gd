@@ -25,6 +25,9 @@ func _exit_tree() -> void:
 	rhythm_state.right_action.disconnect(right_lane.action_pressed)
 
 func _on_conductor_track_changed(menu: Menu) -> void:
+	if StateMachine.current_state is not RhythmState:
+		return
+	
 	left_lane.notes.clear()
 	center_lane.notes.clear()
 	right_lane.notes.clear()

@@ -52,6 +52,7 @@ texture_repeat = 2
 texture = ExtResource("3_xryhh")
 
 [node name="PlayerTenant" type="Node2D" parent="."]
+visible = false
 
 [node name="TenantSprite" type="Sprite2D" parent="PlayerTenant"]
 texture = ExtResource("4_yorsk")

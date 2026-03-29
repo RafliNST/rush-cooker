@@ -30,9 +30,6 @@ func _ready() -> void:
 	if current_menu != null:
 		change_track(current_menu)
 
-func _input(event: InputEvent) -> void:
-	pass
-
 func get_music_progress() -> float:
 	return audio_player.get_playback_position()
 	
@@ -49,6 +46,9 @@ func play_music():
 	audio_player.play()
 
 func change_track(menu: Menu):
+	if StateMachine.current_state is not RhythmState:
+		return
+		
 	beat_number = 0
 	beat_arr_pos = 0
 	

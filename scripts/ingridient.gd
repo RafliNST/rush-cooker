@@ -55,6 +55,7 @@ func initialize(item: Ingridient, number: int, targetF: Vector2):
 
 func play_beat():
 	if score_state == SCORE_STATE.FORBID || has_emit:
+		print("tidak bisa")
 		return
 	
 	on_destroy = true

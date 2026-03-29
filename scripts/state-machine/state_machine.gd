@@ -28,7 +28,7 @@ func _input(event: InputEvent) -> void:
 		current_state.Input_Handler(event)
 
 func on_child_transitioned(state, new_state_name):
-	if state != current_state:
+	if state == current_state:
 		return
 		
 	var new_state = states.get(new_state_name.to_lower())

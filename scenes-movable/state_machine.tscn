@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsvmp4nxipic2"]
+[gd_scene load_steps=4 format=3 uid="uid://dsvmp4nxipic2"]
 
 [ext_resource type="Script" path="res://scripts/state-machine/state_machine.gd" id="1_aq1wo"]
 [ext_resource type="Script" path="res://scripts/state-machine/RhythmState.gd" id="2_c47u8"]
+[ext_resource type="Script" path="res://scripts/state-machine/CameraState.gd" id="3_lscy5"]
 
 [node name="StateMachine" type="Node" node_paths=PackedStringArray("initial_state")]
 script = ExtResource("1_aq1wo")
@@ -12,3 +13,6 @@ script = ExtResource("2_c47u8")
 left_action_name = "beat_left_press"
 center_action_name = "beat_center_press"
 right_action_name = "beat_right_press"
+
+[node name="CameraState" type="Node" parent="."]
+script = ExtResource("3_lscy5")
