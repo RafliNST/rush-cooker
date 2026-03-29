@@ -26,11 +26,12 @@ func _exit_tree() -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		is_dragging = event.pressed
+		is_back_to_target = false
 		drag_start_x = event.position.x
 		camera_start_x = position.x
 		
 		
-	if event is InputEventMouseMotion and is_dragging:
+	if event is InputEventMouseMotion and is_dragging:		
 		var delta_x = (event.position.x - drag_start_x) * drag_speed
 		position.x  = clamp(camera_start_x - delta_x, limit_left_custom, limit_right_custom)
 		if StateMachine.current_state is not CameraState:
@@ -47,6 +48,7 @@ func move_camera_to_target(delta: float) -> void:
 		position.x = target_object.position.x
 		is_back_to_target = false
 		camera_to_center.emit()
+	
 
 func _on_button_pressed() -> void:
 	is_back_to_target = true
