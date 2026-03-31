@@ -3,10 +3,11 @@ extends Node2D
 class_name Note
 
 @onready var sprite_renderer := $Icon
-@onready var audio_output := $AudioOutput
 @onready var destroy_timer := $DestroyTimer
 
 enum SCORE_STATE { FORBID = 0, BAD = -2, GOOD = 2, PERFECT = 4 }
+
+var audio_output: AudioStreamPlayer
 
 var score_state:= SCORE_STATE.FORBID
 
@@ -41,12 +42,13 @@ func _process(delta: float) -> void:
 	process = (beat_number - Conductor.Instance.get_current_beat_pos()) / Conductor.Instance.beat_delay
 	position = target_pos.lerp(spawn_pos, process)
 
-func initialize(item: Ingridient, number: int, targetF: Vector2):
+func initialize(item: Ingridient, number: int, targetF: Vector2, audio_stream: AudioStreamPlayer):
 	ingridient = item
 	beat_number = Conductor.Instance.offset + number
+	audio_output = audio_stream
 	
 	sprite_renderer.texture = item.sprite
-	audio_output.stream = item.SFX
+	#audio_output.stream = item.SFX
 	
 	spawn_pos = position
 	target_pos = targetF
@@ -55,13 +57,16 @@ func initialize(item: Ingridient, number: int, targetF: Vector2):
 
 func play_beat():
 	if score_state == SCORE_STATE.FORBID || has_emit:
-		print("tidak bisa")
 		return
+		
+	audio_output.stream = ingridient.SFX
+	audio_output.play()
 	
 	on_destroy = true
 	has_emit = true
-	audio_output.play()
-	destroy_timer.start()
+	ScoreManager.Instance.beat_triggered.emit(score_state if has_emit else SCORE_STATE.BAD)
+	
+	queue_free()
 
 func _on_destroy_timer_timeout() -> void:
 	ScoreManager.Instance.beat_triggered.emit(score_state if has_emit else SCORE_STATE.BAD)

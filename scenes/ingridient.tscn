@@ -7,7 +7,7 @@
 atlas = ExtResource("2_jq8ux")
 region = Rect2(32, 0, 16, 16)
 
-[node name="Note" type="Node2D"]
+[node name="Ingridient" type="Node2D"]
 script = ExtResource("1_5qvts")
 
 [node name="Icon" type="Sprite2D" parent="."]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c34rkf3xyludj"]
+
+[ext_resource type="Texture2D" uid="uid://cibhmqhbvo8ch" path="res://icon.svg" id="1_p0q3p"]
+[ext_resource type="Texture2D" uid="uid://bwho5o0b3unm6" path="res://textures/sprites/rail-sprite-16x16.png" id="2_rmw0d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3bsr"]
+atlas = ExtResource("2_rmw0d")
+region = Rect2(0, 0, 16, 16)
+
+[node name="Customer" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_p0q3p")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -48)
+
+[node name="Sprite2D" type="Sprite2D" parent="VisibleOnScreenNotifier2D"]
+texture = SubResource("AtlasTexture_b3bsr")
+
+[node name="PatientTimer" type="Timer" parent="."]

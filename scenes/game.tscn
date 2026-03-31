@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://wmb7rrotmfad"]
+[gd_scene load_steps=9 format=3 uid="uid://wmb7rrotmfad"]
 
 [ext_resource type="Texture2D" uid="uid://coppqiy5xop5x" path="res://textures/SunsetParalax/1.png" id="1_a1gti"]
 [ext_resource type="Script" path="res://scripts/paralax/paralax.gd" id="1_mhlsh"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bv5cunuq0qju3" path="res://textures/SunsetParalax/5.png" id="3_jj70m"]
 [ext_resource type="Texture2D" uid="uid://dcqkiy8jnji4r" path="res://textures/SunsetParalax/8.png" id="3_xryhh"]
 [ext_resource type="Texture2D" uid="uid://cro7mrnok68yn" path="res://textures/SunsetParalax/4.png" id="4_yorsk"]
+[ext_resource type="PackedScene" uid="uid://h014fc2ah1ol" path="res://scenes/Customer/customer_manager.tscn" id="7_wenam"]
+[ext_resource type="PackedScene" uid="uid://c34rkf3xyludj" path="res://scenes/Customer/customer.tscn" id="8_v0od6"]
 
 [node name="Game" type="Node2D"]
 
@@ -58,8 +60,8 @@ texture = ExtResource("4_yorsk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("1_mhlsh")
-limit_left_custom = -3000.0
-limit_right_custom = 3000.0
+limit_left_custom = -1000.0
+limit_right_custom = 1000.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -70,10 +72,16 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -73.5
-offset_top = -31.0
+offset_top = -66.0
 offset_right = 73.5
+offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Camera to Tenant"
+
+[node name="CustomerManager" parent="." instance=ExtResource("7_wenam")]
+customer_scene = ExtResource("8_v0od6")
+
+[node name="CustomersCollection" type="Node2D" parent="."]
 
 [connection signal="pressed" from="CanvasLayer/Button" to="Camera2D" method="_on_button_pressed"]

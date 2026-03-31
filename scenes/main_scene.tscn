@@ -41,7 +41,7 @@ size_flags_horizontal = 8
 [node name="SubViewport" type="SubViewport" parent="GameContainer/HBoxContainer/TenantScene"]
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
-size = Vector2i(1152, 680)
+size = Vector2i(852, 680)
 render_target_update_mode = 4
 script = ExtResource("2_hr31o")
 grow_speed = 500
@@ -49,5 +49,5 @@ grow_speed = 500
 [node name="Game" parent="GameContainer/HBoxContainer/TenantScene/SubViewport" instance=ExtResource("3_dm5ba")]
 
 [node name="RhythmControl" parent="." instance=ExtResource("5_7sssm")]
-offset = Vector2(-10, 10)
-transform = Transform2D(1, 0, 0, 1, -10, 10)
+x_offset = 350
+speed = 500.0

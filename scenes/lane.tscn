@@ -13,6 +13,8 @@ script = ExtResource("1_iythr")
 
 [node name="AudioStream" type="AudioStreamPlayer" parent="."]
 
+[node name="IngridientSFXStream" type="AudioStreamPlayer" parent="."]
+
 [node name="TargetPos" type="Marker2D" parent="."]
 position = Vector2(0, 800)
 
@@ -27,5 +29,3 @@ scale = Vector2(6.5, 56)
 texture = SubResource("AtlasTexture_ks5t5")
 
 [node name="NotesCollection" type="Node2D" parent="."]
-
-[connection signal="on_note_beat" from="." to="." method="_on_on_note_beat"]

@@ -11,4 +11,6 @@ func initialize(menu: Menu):
 	activator.icon = menu.icon
 
 func _on_activator_selection_pressed() -> void:
+	if StateMachine.current_state is not RhythmState:
+		return
 	Conductor.Instance.track_changed.emit(menu)

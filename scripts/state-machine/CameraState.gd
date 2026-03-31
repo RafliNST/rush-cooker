@@ -13,5 +13,4 @@ func Input_Handler(_event: InputEvent):
 	pass
 
 func change_state_to_self() -> void:
-	print("Ubah State")
 	Transitioned.emit(self, "CameraState")

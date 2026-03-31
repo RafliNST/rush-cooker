@@ -2,8 +2,6 @@ extends Node2D
 
 class_name Lane
 
-signal on_note_beat(lane: Menu.LanePosition, shot: AudioStream)
-
 @export var audio : AudioStream
 @export var action_name : String
 
@@ -11,6 +9,7 @@ signal on_note_beat(lane: Menu.LanePosition, shot: AudioStream)
 
 @onready var target_pos := $TargetPos
 @onready var audio_stream := $AudioStream
+@onready var ingridient_sfx_stream := $IngridientSFXStream
 @onready var notes_collection := $NotesCollection
 
 var notes: Dictionary
@@ -23,4 +22,4 @@ func spawn_note(beat_number: int):
 	if notes.has(beat_number):
 		var note = Conductor.Instance.note_scene.instantiate()
 		notes_collection.add_child(note)
-		note.initialize(notes[beat_number].ingridient, beat_number,target_pos.position)
+		note.initialize(notes[beat_number].ingridient, beat_number,target_pos.position, ingridient_sfx_stream)
