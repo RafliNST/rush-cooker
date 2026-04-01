@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c34rkf3xyludj"]
+[gd_scene load_steps=5 format=3 uid="uid://c34rkf3xyludj"]
 
+[ext_resource type="Script" path="res://scripts/Customer/customer.gd" id="1_impmu"]
 [ext_resource type="Texture2D" uid="uid://cibhmqhbvo8ch" path="res://icon.svg" id="1_p0q3p"]
 [ext_resource type="Texture2D" uid="uid://bwho5o0b3unm6" path="res://textures/sprites/rail-sprite-16x16.png" id="2_rmw0d"]
 
@@ -8,15 +9,17 @@ atlas = ExtResource("2_rmw0d")
 region = Rect2(0, 0, 16, 16)
 
 [node name="Customer" type="Node2D"]
+script = ExtResource("1_impmu")
+mov_speed = 100.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_p0q3p")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(0, -48)
+[node name="OrderNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -100)
 
-[node name="Sprite2D" type="Sprite2D" parent="VisibleOnScreenNotifier2D"]
+[node name="OrderIcon" type="Sprite2D" parent="OrderNotifier"]
+scale = Vector2(0.3, 0.3)
 texture = SubResource("AtlasTexture_b3bsr")
 
 [node name="PatientTimer" type="Timer" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://wmb7rrotmfad"]
+[gd_scene load_steps=13 format=3 uid="uid://wmb7rrotmfad"]
 
 [ext_resource type="Texture2D" uid="uid://coppqiy5xop5x" path="res://textures/SunsetParalax/1.png" id="1_a1gti"]
 [ext_resource type="Script" path="res://scripts/paralax/paralax.gd" id="1_mhlsh"]
@@ -7,7 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://dcqkiy8jnji4r" path="res://textures/SunsetParalax/8.png" id="3_xryhh"]
 [ext_resource type="Texture2D" uid="uid://cro7mrnok68yn" path="res://textures/SunsetParalax/4.png" id="4_yorsk"]
 [ext_resource type="PackedScene" uid="uid://h014fc2ah1ol" path="res://scenes/Customer/customer_manager.tscn" id="7_wenam"]
-[ext_resource type="PackedScene" uid="uid://c34rkf3xyludj" path="res://scenes/Customer/customer.tscn" id="8_v0od6"]
+[ext_resource type="Script" path="res://scripts/resource/menu/menu.gd" id="8_c0xgp"]
+[ext_resource type="Resource" uid="uid://dl1o8yi0g2k7x" path="res://scripts/resource/menu/MiGoreng.tres" id="9_j3qq0"]
+[ext_resource type="Resource" uid="uid://debhai37epfkn" path="res://scripts/resource/menu/MiRebus.tres" id="10_ggkpa"]
+[ext_resource type="Resource" uid="uid://bqv34k7us7n7u" path="res://scripts/resource/menu/NasiGoreng.tres" id="11_rffrp"]
+[ext_resource type="Resource" uid="uid://sy5okdw5dcy1" path="res://scripts/resource/menu/NasiKuning.tres" id="12_tbh8r"]
 
 [node name="Game" type="Node2D"]
 
@@ -79,9 +83,30 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Camera to Tenant"
 
-[node name="CustomerManager" parent="." instance=ExtResource("7_wenam")]
-customer_scene = ExtResource("8_v0od6")
+[node name="CustomerManager" parent="." node_paths=PackedStringArray("spawn_points", "table_points") instance=ExtResource("7_wenam")]
+spawn_points = [NodePath("LeftSpawn"), NodePath("RightSpawn")]
+table_points = [NodePath("../TablePoints/Marker2D"), NodePath("../TablePoints/Marker2D2"), NodePath("../TablePoints/Marker2D3"), NodePath("../TablePoints/Marker2D4")]
+menu_selection = Array[ExtResource("8_c0xgp")]([ExtResource("9_j3qq0"), ExtResource("10_ggkpa"), ExtResource("11_rffrp"), ExtResource("12_tbh8r")])
 
-[node name="CustomersCollection" type="Node2D" parent="."]
+[node name="LeftSpawn" type="Marker2D" parent="CustomerManager"]
+position = Vector2(-2000, 200)
+
+[node name="RightSpawn" type="Marker2D" parent="CustomerManager"]
+position = Vector2(2000, 200)
+
+[node name="TablePoints" type="Node2D" parent="."]
+position = Vector2(0, 200)
+
+[node name="Marker2D" type="Marker2D" parent="TablePoints"]
+position = Vector2(-82, 0)
+
+[node name="Marker2D2" type="Marker2D" parent="TablePoints"]
+position = Vector2(77, 0)
+
+[node name="Marker2D3" type="Marker2D" parent="TablePoints"]
+position = Vector2(208, 0)
+
+[node name="Marker2D4" type="Marker2D" parent="TablePoints"]
+position = Vector2(-226, 0)
 
 [connection signal="pressed" from="CanvasLayer/Button" to="Camera2D" method="_on_button_pressed"]
