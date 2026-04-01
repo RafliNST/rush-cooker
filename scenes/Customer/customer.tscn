@@ -10,16 +10,15 @@ region = Rect2(0, 0, 16, 16)
 
 [node name="Customer" type="Node2D"]
 script = ExtResource("1_impmu")
-mov_speed = 100.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_p0q3p")
 
 [node name="OrderNotifier" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(0, -100)
+position = Vector2(0, -150)
 
 [node name="OrderIcon" type="Sprite2D" parent="OrderNotifier"]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.4, 0.4)
 texture = SubResource("AtlasTexture_b3bsr")
 
 [node name="PatientTimer" type="Timer" parent="."]

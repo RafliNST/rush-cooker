@@ -84,6 +84,7 @@ grow_vertical = 0
 text = "Camera to Tenant"
 
 [node name="CustomerManager" parent="." node_paths=PackedStringArray("spawn_points", "table_points") instance=ExtResource("7_wenam")]
+elapse_time = 0.5
 spawn_points = [NodePath("LeftSpawn"), NodePath("RightSpawn")]
 table_points = [NodePath("../TablePoints/Marker2D"), NodePath("../TablePoints/Marker2D2"), NodePath("../TablePoints/Marker2D3"), NodePath("../TablePoints/Marker2D4")]
 menu_selection = Array[ExtResource("8_c0xgp")]([ExtResource("9_j3qq0"), ExtResource("10_ggkpa"), ExtResource("11_rffrp"), ExtResource("12_tbh8r")])
