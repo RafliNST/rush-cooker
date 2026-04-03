@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dsfabwpfwycx3" path="res://textures/SunsetParalax/2.png" id="2_8ay5t"]
 [ext_resource type="Texture2D" uid="uid://bv5cunuq0qju3" path="res://textures/SunsetParalax/5.png" id="3_jj70m"]
 [ext_resource type="Texture2D" uid="uid://dcqkiy8jnji4r" path="res://textures/SunsetParalax/8.png" id="3_xryhh"]
-[ext_resource type="Texture2D" uid="uid://cro7mrnok68yn" path="res://textures/SunsetParalax/4.png" id="4_yorsk"]
+[ext_resource type="PackedScene" uid="uid://ca0ds7uqr700u" path="res://scenes/player_tenant.tscn" id="5_8rdnm"]
 [ext_resource type="PackedScene" uid="uid://h014fc2ah1ol" path="res://scenes/Customer/customer_manager.tscn" id="7_wenam"]
 [ext_resource type="Script" path="res://scripts/resource/menu/menu.gd" id="8_c0xgp"]
 [ext_resource type="Resource" uid="uid://dl1o8yi0g2k7x" path="res://scripts/resource/menu/MiGoreng.tres" id="9_j3qq0"]
@@ -57,10 +57,7 @@ repeat_times = 3
 texture_repeat = 2
 texture = ExtResource("3_xryhh")
 
-[node name="PlayerTenant" type="Node2D" parent="."]
-
-[node name="TenantSprite" type="Sprite2D" parent="PlayerTenant"]
-texture = ExtResource("4_yorsk")
+[node name="PlayerTenant" parent="." instance=ExtResource("5_8rdnm")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("1_mhlsh")
