@@ -1,11 +1,15 @@
-[gd_resource type="Resource" script_class="Menu" load_steps=23 format=3 uid="uid://dl1o8yi0g2k7x"]
+[gd_resource type="Resource" script_class="Menu" load_steps=24 format=3 uid="uid://dl1o8yi0g2k7x"]
 
 [ext_resource type="Script" path="res://scripts/resource/menu_item/menu_item.gd" id="1_3t8to"]
 [ext_resource type="AudioStream" uid="uid://blyf1fewbxqsn" path="res://musics/dummy/ヨルシカ - さよならモルテン.mp3" id="1_6stq1"]
+[ext_resource type="Texture2D" uid="uid://3qaj4tsfsaio" path="res://textures/sprites/vegetables-16x16.png" id="2_8urqg"]
 [ext_resource type="Script" path="res://scripts/resource/menu/menu.gd" id="2_bbl7o"]
-[ext_resource type="Texture2D" uid="uid://cibhmqhbvo8ch" path="res://icon.svg" id="2_iyxrf"]
 [ext_resource type="Resource" uid="uid://87skqfecoanb" path="res://scripts/resource/ingridient/tomato.tres" id="4_jhkhn"]
 [ext_resource type="Resource" uid="uid://yur05dr7nr6o" path="res://scripts/resource/ingridient/onion.tres" id="5_2xwj5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t74ea"]
+atlas = ExtResource("2_8urqg")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="Resource" id="Resource_xqara"]
 script = ExtResource("1_3t8to")
@@ -106,7 +110,7 @@ lane_pos = 0
 [resource]
 script = ExtResource("2_bbl7o")
 name = "Mi Goreng"
-icon = ExtResource("2_iyxrf")
+icon = SubResource("AtlasTexture_t74ea")
 BGM = ExtResource("1_6stq1")
 BPM = 130
 ingredients = Array[ExtResource("1_3t8to")]([SubResource("Resource_xqara"), SubResource("Resource_efvxc"), SubResource("Resource_8qb5t"), SubResource("Resource_lxp65"), SubResource("Resource_6gsmw"), SubResource("Resource_b6560"), SubResource("Resource_ikvur"), SubResource("Resource_72oct"), SubResource("Resource_tk4md"), SubResource("Resource_fb1sw"), SubResource("Resource_qcfyv"), SubResource("Resource_vf5rr"), SubResource("Resource_r2xoh"), SubResource("Resource_kbwn7"), SubResource("Resource_nlhme"), SubResource("Resource_j40ku")])

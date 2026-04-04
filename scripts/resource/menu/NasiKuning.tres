@@ -1,11 +1,15 @@
-[gd_resource type="Resource" script_class="Menu" load_steps=19 format=3 uid="uid://sy5okdw5dcy1"]
+[gd_resource type="Resource" script_class="Menu" load_steps=20 format=3 uid="uid://sy5okdw5dcy1"]
 
 [ext_resource type="AudioStream" uid="uid://b7e6ynwffmkov" path="res://musics/BGM/BGM-dari-Kokonut/thrill.mp3" id="1_3h3bs"]
-[ext_resource type="Texture2D" uid="uid://cibhmqhbvo8ch" path="res://icon.svg" id="2_uyce3"]
+[ext_resource type="Texture2D" uid="uid://3qaj4tsfsaio" path="res://textures/sprites/vegetables-16x16.png" id="2_lr0ro"]
 [ext_resource type="Script" path="res://scripts/resource/menu_item/menu_item.gd" id="3_b2j7p"]
 [ext_resource type="Script" path="res://scripts/resource/menu/menu.gd" id="5_r2e4e"]
 [ext_resource type="Resource" uid="uid://yur05dr7nr6o" path="res://scripts/resource/ingridient/onion.tres" id="5_rwhna"]
 [ext_resource type="Resource" uid="uid://87skqfecoanb" path="res://scripts/resource/ingridient/tomato.tres" id="5_xuk22"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ceyu"]
+atlas = ExtResource("2_lr0ro")
+region = Rect2(11, 0, 16, 16)
 
 [sub_resource type="Resource" id="Resource_8oh8m"]
 script = ExtResource("3_b2j7p")
@@ -82,7 +86,7 @@ lane_pos = 1
 [resource]
 script = ExtResource("5_r2e4e")
 name = "Nasi Kuning"
-icon = ExtResource("2_uyce3")
+icon = SubResource("AtlasTexture_3ceyu")
 BGM = ExtResource("1_3h3bs")
 BPM = 106
 ingredients = Array[ExtResource("3_b2j7p")]([SubResource("Resource_8oh8m"), SubResource("Resource_d1f15"), SubResource("Resource_cufln"), SubResource("Resource_ry86l"), SubResource("Resource_ljxfk"), SubResource("Resource_uubst"), SubResource("Resource_bkv5b"), SubResource("Resource_57328"), SubResource("Resource_6x54s"), SubResource("Resource_prd12"), SubResource("Resource_6pq3j"), SubResource("Resource_ob8bu")])

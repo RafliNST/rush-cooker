@@ -1,11 +1,15 @@
-[gd_resource type="Resource" script_class="Menu" load_steps=23 format=3 uid="uid://debhai37epfkn"]
+[gd_resource type="Resource" script_class="Menu" load_steps=24 format=3 uid="uid://debhai37epfkn"]
 
 [ext_resource type="AudioStream" uid="uid://bfirvtcclfkd5" path="res://musics/BGM/BGM-dari-Kokonut/bebehbit.mp3" id="1_bjn0b"]
-[ext_resource type="Texture2D" uid="uid://cibhmqhbvo8ch" path="res://icon.svg" id="2_lnlfr"]
+[ext_resource type="Texture2D" uid="uid://3qaj4tsfsaio" path="res://textures/sprites/vegetables-16x16.png" id="2_p8tre"]
 [ext_resource type="Script" path="res://scripts/resource/menu_item/menu_item.gd" id="3_m3von"]
 [ext_resource type="Resource" uid="uid://87skqfecoanb" path="res://scripts/resource/ingridient/tomato.tres" id="4_28c6g"]
 [ext_resource type="Resource" uid="uid://yur05dr7nr6o" path="res://scripts/resource/ingridient/onion.tres" id="5_mqggf"]
 [ext_resource type="Script" path="res://scripts/resource/menu/menu.gd" id="6_gfepp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lv8u4"]
+atlas = ExtResource("2_p8tre")
+region = Rect2(24, 0, 16, 16)
 
 [sub_resource type="Resource" id="Resource_xqara"]
 script = ExtResource("3_m3von")
@@ -106,7 +110,7 @@ lane_pos = 0
 [resource]
 script = ExtResource("6_gfepp")
 name = "Mi Rebus"
-icon = ExtResource("2_lnlfr")
+icon = SubResource("AtlasTexture_lv8u4")
 BGM = ExtResource("1_bjn0b")
 BPM = 122
 ingredients = Array[ExtResource("3_m3von")]([SubResource("Resource_xqara"), SubResource("Resource_efvxc"), SubResource("Resource_8qb5t"), SubResource("Resource_lxp65"), SubResource("Resource_6gsmw"), SubResource("Resource_b6560"), SubResource("Resource_ikvur"), SubResource("Resource_72oct"), SubResource("Resource_tk4md"), SubResource("Resource_fb1sw"), SubResource("Resource_qcfyv"), SubResource("Resource_vf5rr"), SubResource("Resource_r2xoh"), SubResource("Resource_kbwn7"), SubResource("Resource_nlhme"), SubResource("Resource_j40ku")])

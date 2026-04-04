@@ -12,4 +12,5 @@ func _ready() -> void:
 func dish_ready(ready_menu: ReadyMenu):
 	is_menu_ready = true
 	
+	# icon is already change before the last note arrive
 	ready_menu_icon.texture = ready_menu.menu.icon

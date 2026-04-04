@@ -55,7 +55,7 @@ func change_track(menu: Menu):
 	beat_arr_pos = 0
 	
 	current_menu = menu
-	note_timer.wait_time = current_menu.BPM / 60.0
+	note_timer.wait_time = 60.0 / current_menu.BPM
 	
 	setup_timer()
 	play_music()
