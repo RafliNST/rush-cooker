@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var selector_container := $Control/VBoxContainer
+@onready var selector_container := $MenuControl/VBoxContainer
 
 @export var menu_selector : PackedScene
 @export var menus : Array[Menu]

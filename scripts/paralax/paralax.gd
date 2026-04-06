@@ -24,10 +24,6 @@ func _exit_tree() -> void:
 	Instance = null
 
 func _input(event: InputEvent) -> void:
-	if Conductor.Instance != null:
-		if Conductor.Instance.current_menu != null:
-			return
-	
 	if event is InputEventMouseButton:
 		is_dragging = event.pressed
 		is_back_to_target = false

@@ -8,4 +8,5 @@ enum LanePosition { LEFT, CENTER, RIGHT }
 @export var icon: Texture2D
 @export var BGM: AudioStream
 @export var BPM: int
+@export var price: int
 @export var ingredients: Array[MenuItem]

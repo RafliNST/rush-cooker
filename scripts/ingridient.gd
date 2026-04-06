@@ -48,7 +48,6 @@ func initialize(item: Ingridient, number: int, targetF: Vector2, audio_stream: A
 	audio_output = audio_stream
 	
 	sprite_renderer.texture = item.sprite
-	#audio_output.stream = item.SFX
 	
 	spawn_pos = position
 	target_pos = targetF

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccjqxopub3fl"]
+[gd_scene load_steps=6 format=3 uid="uid://ccjqxopub3fl"]
 
 [ext_resource type="PackedScene" uid="uid://bntavy6d62b4f" path="res://scenes/conductor.tscn" id="1_pbw8e"]
 [ext_resource type="Script" path="res://scripts/game_viewport.gd" id="2_hr31o"]
 [ext_resource type="PackedScene" uid="uid://wmb7rrotmfad" path="res://scenes/game.tscn" id="3_dm5ba"]
 [ext_resource type="PackedScene" uid="uid://pddvifau75jp" path="res://scenes/UIs/rhythm_control.tscn" id="5_7sssm"]
+[ext_resource type="Script" path="res://scripts/score_control.gd" id="5_k7db3"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -37,11 +38,14 @@ beat_delay = 3.0
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 8
+mouse_force_pass_scroll_events = false
 
 [node name="SubViewport" type="SubViewport" parent="GameContainer/HBoxContainer/TenantScene"]
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
+physics_object_picking = true
 size = Vector2i(852, 680)
+size_2d_override_stretch = true
 render_target_update_mode = 4
 script = ExtResource("2_hr31o")
 grow_speed = 500
@@ -51,3 +55,40 @@ grow_speed = 500
 [node name="RhythmControl" parent="." instance=ExtResource("5_7sssm")]
 x_offset = 350
 speed = 500.0
+
+[node name="ScoreLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreControl" type="Control" parent="ScoreLayer"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("5_k7db3")
+
+[node name="IncomeBox" type="VBoxContainer" parent="ScoreLayer/ScoreControl"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="IncomeLabel" type="Label" parent="ScoreLayer/ScoreControl/IncomeBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Todays Income:"
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="ScoreLayer/ScoreControl/IncomeBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "0"
+horizontal_alignment = 1

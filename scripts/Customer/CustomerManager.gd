@@ -1,6 +1,10 @@
 extends Node
 class_name CustomerManager
 
+static var Instance: CustomerManager
+
+signal order_complete(customer: Customer)
+
 @export var elapse_time: float
 
 @export var customer_scene: PackedScene
@@ -13,6 +17,12 @@ enum TABLE_AVAILABILITY { NO, YES }
 var tables_dict := { }
 
 @onready var new_customer_timer := $SpawnNewCustomer
+
+func _enter_tree() -> void:
+	Instance = self
+
+func _exit_tree() -> void:
+	Instance = null
 
 func _ready() -> void:
 	for table in table_points:

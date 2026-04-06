@@ -4,6 +4,7 @@ class_name Conductor
 
 signal track_changed(menu: Menu)
 signal music_beat(beat_number: int)
+
 signal menu_complete(menu: ReadyMenu)
 var is_completed := false
 

@@ -13,7 +13,7 @@ script = ExtResource("1_e768n")
 menu_selector = ExtResource("1_wev1h")
 menus = Array[ExtResource("3_7fqbc")]([ExtResource("2_ijsoh"), ExtResource("3_gsmhx"), ExtResource("4_6j0es"), ExtResource("5_jufx0")])
 
-[node name="Control" type="Control" parent="."]
+[node name="MenuControl" type="Control" parent="."]
 layout_mode = 3
 anchor_left = 0.8
 anchor_right = 1.0
@@ -21,10 +21,11 @@ anchor_bottom = 1.0
 offset_left = -19.6
 offset_top = 10.0
 offset_right = -20.0
+offset_bottom = -670.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Control"]
+[node name="Label" type="Label" parent="MenuControl"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -35,13 +36,13 @@ text = "Select Menu to Cook"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuControl"]
 layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.046
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -0.280003
+offset_left = -230.0
+offset_top = 32.0
+offset_right = 6.10352e-05
+offset_bottom = 32.0
 grow_horizontal = 0
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true

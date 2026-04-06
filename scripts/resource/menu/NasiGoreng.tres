@@ -89,4 +89,5 @@ name = "Nasi Goreng"
 icon = SubResource("AtlasTexture_carmo")
 BGM = ExtResource("1_0a2ai")
 BPM = 210
+price = 110
 ingredients = Array[ExtResource("1_36g0l")]([SubResource("Resource_8oh8m"), SubResource("Resource_d1f15"), SubResource("Resource_cufln"), SubResource("Resource_ry86l"), SubResource("Resource_ljxfk"), SubResource("Resource_uubst"), SubResource("Resource_bkv5b"), SubResource("Resource_57328"), SubResource("Resource_6x54s"), SubResource("Resource_prd12"), SubResource("Resource_6pq3j"), SubResource("Resource_ob8bu")])
