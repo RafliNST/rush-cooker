@@ -11,8 +11,13 @@ func _enter_tree() -> void:
 
 func _exit_tree() -> void:
 	Instance = null
-
+	
+func _ready() -> void:
+	Conductor.Instance.track_changed.connect(reset_score)
 
 func _on_beat_triggered(score: Note.SCORE_STATE) -> void:
 	current_score += score
 	print("Current Score: " + str(current_score))
+
+func reset_score(menu: Menu) -> void:
+	current_score = 0

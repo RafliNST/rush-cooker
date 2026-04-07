@@ -29,7 +29,7 @@ var process := 0.0 :
 				score_state = SCORE_STATE.BAD
 				on_destroy = true
 				destroy_timer.start()
-			elif process < .03:
+			elif process < .045:
 				score_state = SCORE_STATE.PERFECT
 			elif process < .05:
 				score_state = SCORE_STATE.GOOD

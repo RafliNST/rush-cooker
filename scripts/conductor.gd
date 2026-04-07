@@ -5,7 +5,7 @@ class_name Conductor
 signal track_changed(menu: Menu)
 signal music_beat(beat_number: int)
 
-signal menu_complete(menu: ReadyMenu)
+signal menu_complete(menu: Menu)
 var is_completed := false
 
 static var Instance: Conductor
@@ -66,8 +66,5 @@ func _on_timeout() -> void:
 		music_beat.emit(beat_number)
 	else:
 		is_completed = true
-		menu_complete.emit(ReadyMenu.ReadyMenu(current_menu, 
-			ScoreManager.Instance.current_score \
-				if ScoreManager.Instance != null\
-				else 0))
+		menu_complete.emit(current_menu)
 	beat_number += 1

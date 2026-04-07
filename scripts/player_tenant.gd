@@ -5,7 +5,7 @@ static var Instance: PlayerTenant
 
 @onready var ready_menu_icon := $ReadyMenu/MenuIcon
 
-var is_menu_ready := false
+var menu_performane := 0.0
 
 func _enter_tree() -> void:
 	Instance = self
@@ -20,13 +20,13 @@ func _ready() -> void:
 		
 	ready_menu_icon.hide()
 
-func dish_ready(ready_menu: ReadyMenu):
-	is_menu_ready = true
+func dish_ready(ready_menu: Menu):
 	ready_menu_icon.show()
 	
-	ready_menu_icon.texture = ready_menu.menu.icon
+	menu_performane = ScoreManager.Instance.current_score / \
+		float((ready_menu.ingredients.size()-1) * Note.SCORE_STATE.PERFECT)
+	
+	ready_menu_icon.texture = ready_menu.icon
 	
 func track_changed(menu: Menu):
-	is_menu_ready = false
-	
 	ready_menu_icon.hide()

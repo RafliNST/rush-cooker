@@ -47,7 +47,8 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		receive_order()
 
 func receive_order() -> void:
-	if not PlayerTenant.Instance.is_menu_ready:
+	if not Conductor.Instance.menu_complete or \
+		order_state == ORDER_STATE.RETURN:
 		return
 	
 	if Conductor.Instance.current_menu == menu:
