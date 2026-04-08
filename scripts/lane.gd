@@ -14,11 +14,18 @@ class_name Lane
 
 var notes: Dictionary
 
+func _ready() -> void:
+	Conductor.Instance.track_changed.connect(free_children)
+
+func free_children(menu: Menu) -> void:
+	for note in notes_collection.get_children():
+		note.queue_free()
+
 func action_pressed():
 	if notes_collection.get_child_count() > 0:
 		notes_collection.get_child(0).play_beat()
 
-func spawn_note(beat_number: int):	
+func spawn_note(beat_number: int):
 	if notes.has(beat_number):
 		var note = Conductor.Instance.note_scene.instantiate()
 		notes_collection.add_child(note)

@@ -10,3 +10,6 @@ enum LanePosition { LEFT, CENTER, RIGHT }
 @export var BPM: int
 @export var price: int
 @export var ingredients: Array[MenuItem]
+
+var max_score: int:
+	get:	return ingredients.size() * Note.SCORE_STATE.PERFECT

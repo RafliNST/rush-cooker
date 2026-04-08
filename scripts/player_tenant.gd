@@ -23,8 +23,7 @@ func _ready() -> void:
 func dish_ready(ready_menu: Menu):
 	ready_menu_icon.show()
 	
-	menu_performane = ScoreManager.Instance.current_score / \
-		float((ready_menu.ingredients.size()-1) * Note.SCORE_STATE.PERFECT)
+	menu_performane = ScoreManager.Instance.current_score / ready_menu.max_score
 	
 	ready_menu_icon.texture = ready_menu.icon
 	

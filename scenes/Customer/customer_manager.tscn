@@ -10,4 +10,5 @@ customer_scene = ExtResource("2_2koip")
 [node name="SpawnNewCustomer" type="Timer" parent="."]
 wait_time = 0.3
 
+[connection signal="order_complete" from="." to="." method="_on_order_complete"]
 [connection signal="timeout" from="SpawnNewCustomer" to="." method="_on_spawn_new_customer_timeout"]

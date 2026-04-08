@@ -44,7 +44,7 @@ func _process(delta: float) -> void:
 
 func initialize(item: Ingridient, number: int, targetF: Vector2, audio_stream: AudioStreamPlayer):
 	ingridient = item
-	beat_number = Conductor.Instance.offset + number
+	beat_number = int(Conductor.Instance.offset + number)
 	audio_output = audio_stream
 	
 	sprite_renderer.texture = item.sprite

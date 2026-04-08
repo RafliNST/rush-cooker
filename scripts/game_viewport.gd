@@ -30,11 +30,11 @@ func change_length(delta:float, grow_state: GROWING_STATE) -> void:
 	var delta_x = grow_speed * delta
 	
 	if grow_state == GROWING_STATE.SHRINK:
-		if size.x - base_length != 0:
+		if size.x - base_length != 0 and size.x >= base_length:
 			size.x -= delta
 		else:
 			growing_state = GROWING_STATE.IDLE
-	elif grow_state == GROWING_STATE.GROW:
+	elif grow_state == GROWING_STATE.GROW and size.x <= extended_length:
 		if size.x - extended_length != 0:
 			size.x += delta_x * already_moved
 		else:

@@ -21,7 +21,6 @@ func _process(delta: float) -> void:
 		move_to_(seat_pos.global_position, delta)
 	elif order_state == ORDER_STATE.RETURN:
 		move_to_(origin_pos, delta)
-		
 
 func initialize(seat: Node2D, func_menu: Menu) -> void:
 	seat_pos = seat
@@ -54,3 +53,7 @@ func receive_order() -> void:
 	if Conductor.Instance.current_menu == menu:
 		order_state = ORDER_STATE.RETURN
 		CustomerManager.Instance.order_complete.emit(self)
+
+func _on_on_screen_notifier_screen_exited() -> void:
+	if order_state == ORDER_STATE.RETURN:
+		queue_free()
