@@ -19,4 +19,5 @@ texture = SubResource("AtlasTexture_1uuhi")
 [node name="DestroyTimer" type="Timer" parent="."]
 one_shot = true
 
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="timeout" from="DestroyTimer" to="." method="_on_destroy_timer_timeout"]

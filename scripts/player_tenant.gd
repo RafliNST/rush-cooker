@@ -15,17 +15,19 @@ func _exit_tree() -> void:
 
 func _ready() -> void:
 	if Conductor.Instance != null:
-		Conductor.Instance.menu_complete.connect(dish_ready)
+		NoteSpawner.Instance.menu_complete.connect(dish_ready)
 		Conductor.Instance.track_changed.connect(track_changed)
 		
 	ready_menu_icon.hide()
 
-func dish_ready(ready_menu: Menu):
+func dish_ready() -> void:
 	ready_menu_icon.show()
+	menu_performane = float(ScoreManager.Instance.current_score) / \
+		Conductor.Instance.current_menu.max_score
 	
-	menu_performane = ScoreManager.Instance.current_score / ready_menu.max_score
+	print("Performance: " + str(ScoreManager.Instance.current_score))
+	print("Score: " + str(Conductor.Instance.current_menu.max_score))
 	
-	ready_menu_icon.texture = ready_menu.icon
-	
-func track_changed(menu: Menu):
+func track_changed(menu: Menu) -> void:
 	ready_menu_icon.hide()
+	ready_menu_icon.texture = menu.icon

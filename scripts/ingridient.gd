@@ -9,7 +9,7 @@ enum SCORE_STATE { FORBID = 0, BAD = -2, GOOD = 2, PERFECT = 4 }
 
 var audio_output: AudioStreamPlayer
 
-var score_state:= SCORE_STATE.FORBID
+var score_state := SCORE_STATE.FORBID
 
 var spawn_pos: Vector2
 var target_pos: Vector2
@@ -38,7 +38,7 @@ var process := 0.0 :
 	get:
 		return process
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	process = (beat_number - Conductor.Instance.get_current_beat_pos()) / Conductor.Instance.beat_delay
 	position = target_pos.lerp(spawn_pos, process)
 
@@ -70,3 +70,6 @@ func play_beat():
 func _on_destroy_timer_timeout() -> void:
 	ScoreManager.Instance.beat_triggered.emit(score_state if has_emit else SCORE_STATE.BAD)
 	queue_free()
+
+func _on_tree_exiting() -> void:
+	NoteSpawner.Instance.note_spawned -= 1

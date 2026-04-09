@@ -17,7 +17,6 @@ func _ready() -> void:
 
 func _on_beat_triggered(score: Note.SCORE_STATE) -> void:
 	current_score += score
-	print("Current Score: " + str(current_score))
 
-func reset_score(menu: Menu) -> void:
+func reset_score(_menu: Menu) -> void:
 	current_score = 0

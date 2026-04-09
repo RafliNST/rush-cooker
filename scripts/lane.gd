@@ -17,7 +17,7 @@ var notes: Dictionary
 func _ready() -> void:
 	Conductor.Instance.track_changed.connect(free_children)
 
-func free_children(menu: Menu) -> void:
+func free_children(_menu: Menu) -> void:
 	for note in notes_collection.get_children():
 		note.queue_free()
 
@@ -29,4 +29,7 @@ func spawn_note(beat_number: int):
 	if notes.has(beat_number):
 		var note = Conductor.Instance.note_scene.instantiate()
 		notes_collection.add_child(note)
-		note.initialize(notes[beat_number].ingridient, beat_number,target_pos.position, ingridient_sfx_stream)
+		note.initialize(notes[beat_number].ingridient, 
+			beat_number,
+			target_pos.position, 
+			ingridient_sfx_stream)

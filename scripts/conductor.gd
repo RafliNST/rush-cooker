@@ -5,9 +5,6 @@ class_name Conductor
 signal track_changed(menu: Menu)
 signal music_beat(beat_number: int)
 
-signal menu_complete(menu: Menu)
-var is_completed := false
-
 static var Instance: Conductor
 
 @export var offset := 1.0
@@ -62,9 +59,5 @@ func change_track(menu: Menu):
 	play_music()
 
 func _on_timeout() -> void:
-	if beat_number < current_menu.ingredients.size():
-		music_beat.emit(beat_number)
-	else:
-		is_completed = true
-		menu_complete.emit(current_menu)
+	music_beat.emit(beat_number)
 	beat_number += 1

@@ -29,4 +29,5 @@ lane_position = 2
 [node name="ScoreManager" type="Node" parent="."]
 script = ExtResource("6_vr3qn")
 
+[connection signal="menu_complete" from="." to="." method="_on_menu_complete"]
 [connection signal="beat_triggered" from="ScoreManager" to="ScoreManager" method="_on_beat_triggered"]

@@ -1,8 +1,6 @@
 extends Node2D
 class_name Customer
 
-signal clicked(customer: Customer)
-
 @export var mov_speed := 300.0
 @export var waiting_time := 30.0
 
@@ -46,7 +44,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 		receive_order()
 
 func receive_order() -> void:
-	if not Conductor.Instance.menu_complete or \
+	if not NoteSpawner.Instance.menu_ready or \
 		order_state == ORDER_STATE.RETURN:
 		return
 	
