@@ -82,23 +82,6 @@ offset_right = 72.5
 offset_bottom = 109.0
 grow_horizontal = 2
 
-[node name="MenuProgressLabel" type="Label" parent="ScoreLayer/ScoreControl/ScoreBox"]
-custom_minimum_size = Vector2(145, 0)
-layout_mode = 2
-text = "Progress:"
-vertical_alignment = 1
-
-[node name="ProgressLabel" type="Label" parent="ScoreLayer/ScoreControl/ScoreBox/MenuProgressLabel"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 23.0
-grow_horizontal = 0
-text = "32/64"
-horizontal_alignment = 2
-
 [node name="IncomeLabel" type="Label" parent="ScoreLayer/ScoreControl/ScoreBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16

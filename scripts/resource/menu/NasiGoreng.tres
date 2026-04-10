@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Menu" load_steps=8 format=3 uid="uid://bqv34k7us7n7u"]
+[gd_resource type="Resource" script_class="Menu" load_steps=11 format=3 uid="uid://bqv34k7us7n7u"]
 
 [ext_resource type="AudioStream" uid="uid://7brys7450o7t" path="res://musics/dummy/ヨルシカ - 藍二乗.mp3" id="1_0a2ai"]
 [ext_resource type="Script" path="res://scripts/resource/menu_item/menu_item.gd" id="1_36g0l"]
 [ext_resource type="Script" path="res://scripts/resource/menu/menu.gd" id="2_gsjgc"]
 [ext_resource type="Texture2D" uid="uid://3qaj4tsfsaio" path="res://textures/sprites/vegetables-16x16.png" id="2_w83aw"]
 [ext_resource type="Resource" uid="uid://yur05dr7nr6o" path="res://scripts/resource/ingridient/onion.tres" id="5_404nj"]
+[ext_resource type="Resource" uid="uid://87skqfecoanb" path="res://scripts/resource/ingridient/tomato.tres" id="5_nq0cv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_carmo"]
 atlas = ExtResource("2_w83aw")
@@ -16,6 +17,18 @@ ingridient = ExtResource("5_404nj")
 beat_number = 2
 lane_pos = 0
 
+[sub_resource type="Resource" id="Resource_a3hg4"]
+script = ExtResource("1_36g0l")
+ingridient = ExtResource("5_nq0cv")
+beat_number = 3
+lane_pos = 2
+
+[sub_resource type="Resource" id="Resource_6613m"]
+script = ExtResource("1_36g0l")
+ingridient = ExtResource("5_nq0cv")
+beat_number = 6
+lane_pos = 0
+
 [resource]
 script = ExtResource("2_gsjgc")
 name = "Nasi Goreng"
@@ -23,4 +36,4 @@ icon = SubResource("AtlasTexture_carmo")
 BGM = ExtResource("1_0a2ai")
 BPM = 210
 price = 110
-ingredients = Array[ExtResource("1_36g0l")]([SubResource("Resource_8oh8m")])
+ingredients = Array[ExtResource("1_36g0l")]([SubResource("Resource_8oh8m"), SubResource("Resource_a3hg4"), SubResource("Resource_6613m")])

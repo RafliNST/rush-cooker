@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://wmb7rrotmfad"]
+[gd_scene load_steps=15 format=3 uid="uid://wmb7rrotmfad"]
 
 [ext_resource type="Texture2D" uid="uid://coppqiy5xop5x" path="res://textures/SunsetParalax/1.png" id="1_a1gti"]
 [ext_resource type="Script" path="res://scripts/paralax/paralax.gd" id="1_mhlsh"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bv5cunuq0qju3" path="res://textures/SunsetParalax/5.png" id="3_jj70m"]
 [ext_resource type="Texture2D" uid="uid://dcqkiy8jnji4r" path="res://textures/SunsetParalax/8.png" id="3_xryhh"]
 [ext_resource type="PackedScene" uid="uid://ca0ds7uqr700u" path="res://scenes/player_tenant.tscn" id="5_8rdnm"]
+[ext_resource type="Texture2D" uid="uid://cibhmqhbvo8ch" path="res://icon.svg" id="7_6e8hv"]
+[ext_resource type="Script" path="res://scripts/menu_progress.gd" id="7_nd6vx"]
 [ext_resource type="PackedScene" uid="uid://h014fc2ah1ol" path="res://scenes/Customer/customer_manager.tscn" id="7_wenam"]
 [ext_resource type="Script" path="res://scripts/resource/menu/menu.gd" id="8_c0xgp"]
 [ext_resource type="Resource" uid="uid://dl1o8yi0g2k7x" path="res://scripts/resource/menu/MiGoreng.tres" id="9_j3qq0"]
@@ -79,6 +81,56 @@ offset_bottom = -35.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Camera to Tenant"
+
+[node name="MenuProgress" type="VSlider" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.2
+anchor_right = 0.01
+anchor_bottom = 0.8
+offset_top = -4.0
+offset_right = 16.0
+offset_bottom = 4.0
+grow_vertical = 2
+pivot_offset = Vector2(8, 204)
+min_value = -0.5
+max_value = 1.0
+step = 0.01
+value = 0.5
+editable = false
+scrollable = false
+script = ExtResource("7_nd6vx")
+min_max_val = Vector2(-0.25, 1)
+
+[node name="GoodProgress" type="TextureRect" parent="CanvasLayer/MenuProgress"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = 1.0
+offset_right = 64.0
+offset_bottom = 129.0
+grow_horizontal = 2
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(64, 0)
+texture = ExtResource("7_6e8hv")
+
+[node name="BadProgress" type="TextureRect" parent="CanvasLayer/MenuProgress"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -128.0
+offset_right = 64.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(64, 128)
+texture = ExtResource("7_6e8hv")
 
 [node name="CustomerManager" parent="." node_paths=PackedStringArray("spawn_points", "table_points") instance=ExtResource("7_wenam")]
 elapse_time = 0.5
