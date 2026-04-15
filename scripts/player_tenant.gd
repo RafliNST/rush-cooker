@@ -3,7 +3,7 @@ class_name PlayerTenant
 
 static var Instance: PlayerTenant
 
-@onready var ready_menu_icon := $ReadyMenu/MenuIcon
+@onready var ready_menu_icon := $MenuIcon
 
 var menu_performane := 0.0
 

@@ -1,8 +1,85 @@
-[gd_scene load_steps=5 format=3 uid="uid://ca0ds7uqr700u"]
+[gd_scene load_steps=16 format=3 uid="uid://ca0ds7uqr700u"]
 
 [ext_resource type="Script" path="res://scripts/player_tenant.gd" id="1_yhvld"]
-[ext_resource type="Texture2D" uid="uid://cro7mrnok68yn" path="res://textures/SunsetParalax/4.png" id="2_o8idk"]
+[ext_resource type="Texture2D" uid="uid://dahr02fu41qbr" path="res://textures/sprites/paralax-bg/tenantl.png" id="2_112jj"]
+[ext_resource type="Texture2D" uid="uid://c5sa8g1dj2k8p" path="res://textures/sprites/tenant-seller/seller-cooking.png" id="2_abrm7"]
 [ext_resource type="Texture2D" uid="uid://3qaj4tsfsaio" path="res://textures/sprites/vegetables-16x16.png" id="3_mn7rh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1bi3"]
+atlas = ExtResource("2_abrm7")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwfxt"]
+atlas = ExtResource("2_abrm7")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nboe7"]
+atlas = ExtResource("2_abrm7")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gms86"]
+atlas = ExtResource("2_abrm7")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7l1s"]
+atlas = ExtResource("2_abrm7")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkgsw"]
+atlas = ExtResource("2_abrm7")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljj7k"]
+atlas = ExtResource("2_abrm7")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tm8is"]
+atlas = ExtResource("2_abrm7")
+region = Rect2(96, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axpsv"]
+atlas = ExtResource("2_abrm7")
+region = Rect2(96, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_duu7v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1bi3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwfxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nboe7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gms86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7l1s")
+}],
+"loop": true,
+"name": &"cooking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkgsw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljj7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tm8is")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axpsv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_komfc"]
 atlas = ExtResource("3_mn7rh")
@@ -11,12 +88,15 @@ region = Rect2(16, 0, 16, 16)
 [node name="PlayerTenant" type="Node2D"]
 script = ExtResource("1_yhvld")
 
-[node name="TenantSprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_o8idk")
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_duu7v")
+animation = &"cooking"
+frame_progress = 0.119609
 
-[node name="ReadyMenu" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(0, -80)
+[node name="TenantSprite" type="Sprite2D" parent="PlayerSprite"]
+position = Vector2(-3, 4)
+texture = ExtResource("2_112jj")
 
-[node name="MenuIcon" type="Sprite2D" parent="ReadyMenu"]
-scale = Vector2(4, 4)
+[node name="MenuIcon" type="Sprite2D" parent="."]
+position = Vector2(0, -30)
 texture = SubResource("AtlasTexture_komfc")

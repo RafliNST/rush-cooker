@@ -7,7 +7,9 @@ class_name Lane
 
 @export var lane_position: Menu.LanePosition
 
-@onready var target_pos := $TargetPos
+@onready var target_pos := $TargetPos/Sprite2D
+@onready var next_target_pos := $TargetPos
+
 @onready var audio_stream := $AudioStream
 @onready var ingridient_sfx_stream := $IngridientSFXStream
 @onready var notes_collection := $NotesCollection

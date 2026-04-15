@@ -1,7 +1,6 @@
 extends VSlider
 class_name MenuProgress
 
-@export var min_max_val: Vector2
 @export var duration := .3
 
 var menu_progress := 0.0:
@@ -13,9 +12,6 @@ var max_menu_progress := 0.0:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	min_value = min_max_val.x
-	max_value = min_max_val.y
-	
 	Conductor.Instance.track_changed.connect(track_changed)
 	ScoreManager.Instance.beat_triggered.connect(update_progress)
 

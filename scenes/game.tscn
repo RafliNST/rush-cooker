@@ -1,10 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://wmb7rrotmfad"]
+[gd_scene load_steps=16 format=3 uid="uid://wmb7rrotmfad"]
 
 [ext_resource type="Texture2D" uid="uid://coppqiy5xop5x" path="res://textures/SunsetParalax/1.png" id="1_a1gti"]
 [ext_resource type="Script" path="res://scripts/paralax/paralax.gd" id="1_mhlsh"]
-[ext_resource type="Texture2D" uid="uid://dsfabwpfwycx3" path="res://textures/SunsetParalax/2.png" id="2_8ay5t"]
-[ext_resource type="Texture2D" uid="uid://bv5cunuq0qju3" path="res://textures/SunsetParalax/5.png" id="3_jj70m"]
-[ext_resource type="Texture2D" uid="uid://dcqkiy8jnji4r" path="res://textures/SunsetParalax/8.png" id="3_xryhh"]
+[ext_resource type="Texture2D" uid="uid://dbctfypj2h8qx" path="res://textures/sprites/paralax-bg/paralax-building.png" id="2_gcd5r"]
+[ext_resource type="Texture2D" uid="uid://ccnryhld5qhbm" path="res://textures/sprites/paralax-bg/paralax-wall.png" id="3_52vod"]
+[ext_resource type="Texture2D" uid="uid://cyd37yam81wxv" path="res://textures/sprites/paralax-bg/paralax-ground-inverted.png" id="4_1ke54"]
 [ext_resource type="PackedScene" uid="uid://ca0ds7uqr700u" path="res://scenes/player_tenant.tscn" id="5_8rdnm"]
 [ext_resource type="Texture2D" uid="uid://cibhmqhbvo8ch" path="res://icon.svg" id="7_6e8hv"]
 [ext_resource type="Script" path="res://scripts/menu_progress.gd" id="7_nd6vx"]
@@ -14,6 +14,7 @@
 [ext_resource type="Resource" uid="uid://debhai37epfkn" path="res://scripts/resource/menu/MiRebus.tres" id="10_ggkpa"]
 [ext_resource type="Resource" uid="uid://bqv34k7us7n7u" path="res://scripts/resource/menu/NasiGoreng.tres" id="11_rffrp"]
 [ext_resource type="Resource" uid="uid://sy5okdw5dcy1" path="res://scripts/resource/menu/NasiKuning.tres" id="12_tbh8r"]
+[ext_resource type="Texture2D" uid="uid://m3fsvsu5s5ej" path="res://textures/sprites/paralax-bg/table-sprite.png" id="15_gvfgv"]
 
 [node name="Game" type="Node2D"]
 
@@ -29,37 +30,38 @@ repeat_times = 3
 texture_repeat = 2
 texture = ExtResource("1_a1gti")
 
-[node name="Mountain2" type="Parallax2D" parent="ParalaxBackground"]
+[node name="building" type="Parallax2D" parent="ParalaxBackground"]
 scale = Vector2(4, 4)
-scroll_scale = Vector2(0.2, 1)
+scroll_scale = Vector2(0.3, 1)
+scroll_offset = Vector2(-1532, -80)
 repeat_size = Vector2(320, 0)
 repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="ParalaxBackground/Mountain2"]
+[node name="Sprite2D" type="Sprite2D" parent="ParalaxBackground/building"]
 texture_repeat = 2
-texture = ExtResource("2_8ay5t")
+texture = ExtResource("2_gcd5r")
 
-[node name="Mountain3" type="Parallax2D" parent="ParalaxBackground"]
+[node name="back-wall" type="Parallax2D" parent="ParalaxBackground"]
 scale = Vector2(4, 4)
-scroll_scale = Vector2(0.5, 1)
 repeat_size = Vector2(320, 0)
 repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="ParalaxBackground/Mountain3"]
+[node name="Sprite2D" type="Sprite2D" parent="ParalaxBackground/back-wall"]
 texture_repeat = 2
-texture = ExtResource("3_jj70m")
+texture = ExtResource("3_52vod")
 
-[node name="Mountain4" type="Parallax2D" parent="ParalaxBackground"]
+[node name="ground" type="Parallax2D" parent="ParalaxBackground"]
 scale = Vector2(4, 4)
-scroll_scale = Vector2(0.7, 1)
 repeat_size = Vector2(320, 0)
 repeat_times = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="ParalaxBackground/Mountain4"]
+[node name="Sprite2D" type="Sprite2D" parent="ParalaxBackground/ground"]
 texture_repeat = 2
-texture = ExtResource("3_xryhh")
+texture = ExtResource("4_1ke54")
 
 [node name="PlayerTenant" parent="." instance=ExtResource("5_8rdnm")]
+position = Vector2(0, 230)
+scale = Vector2(4, 4)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("1_mhlsh")
@@ -75,9 +77,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -73.5
-offset_top = -66.0
+offset_top = -45.0
 offset_right = 73.5
-offset_bottom = -35.0
+offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Camera to Tenant"
@@ -100,7 +102,6 @@ value = 0.5
 editable = false
 scrollable = false
 script = ExtResource("7_nd6vx")
-min_max_val = Vector2(-0.25, 1)
 
 [node name="GoodProgress" type="TextureRect" parent="CanvasLayer/MenuProgress"]
 layout_mode = 1
@@ -135,7 +136,7 @@ texture = ExtResource("7_6e8hv")
 [node name="CustomerManager" parent="." node_paths=PackedStringArray("spawn_points", "table_points") instance=ExtResource("7_wenam")]
 elapse_time = 0.5
 spawn_points = [NodePath("LeftSpawn"), NodePath("RightSpawn")]
-table_points = [NodePath("../TablePoints/Marker2D"), NodePath("../TablePoints/Marker2D2"), NodePath("../TablePoints/Marker2D3"), NodePath("../TablePoints/Marker2D4")]
+table_points = [NodePath("../TablePoints/Table1/Seats/left-seat"), NodePath("../TablePoints/Table1/Seats/right-seat"), NodePath("../TablePoints/Table2/Seats/left-seat"), NodePath("../TablePoints/Table2/Seats/right-seat"), NodePath("../TablePoints/Table3/Seats/left-seat"), NodePath("../TablePoints/Table3/Seats/right-seat"), NodePath("../TablePoints/Table4/Seats/left-seat"), NodePath("../TablePoints/Table4/Seats/right-seat"), NodePath("../TablePoints/Table5/Seats/left-seat"), NodePath("../TablePoints/Table5/Seats/right-seat"), NodePath("../TablePoints/Table6/Seats/left-seat"), NodePath("../TablePoints/Table6/Seats/right-seat")]
 menu_selection = Array[ExtResource("8_c0xgp")]([ExtResource("9_j3qq0"), ExtResource("10_ggkpa"), ExtResource("11_rffrp"), ExtResource("12_tbh8r")])
 
 [node name="LeftSpawn" type="Marker2D" parent="CustomerManager"]
@@ -147,16 +148,94 @@ position = Vector2(2000, 200)
 [node name="TablePoints" type="Node2D" parent="."]
 position = Vector2(0, 200)
 
-[node name="Marker2D" type="Marker2D" parent="TablePoints"]
-position = Vector2(-82, 0)
+[node name="Table1" type="Node2D" parent="TablePoints"]
+position = Vector2(250, 68)
+scale = Vector2(4, 4)
 
-[node name="Marker2D2" type="Marker2D" parent="TablePoints"]
-position = Vector2(77, 0)
+[node name="Sprite" type="Sprite2D" parent="TablePoints/Table1"]
+texture = ExtResource("15_gvfgv")
 
-[node name="Marker2D3" type="Marker2D" parent="TablePoints"]
-position = Vector2(208, 0)
+[node name="Seats" type="Node2D" parent="TablePoints/Table1"]
 
-[node name="Marker2D4" type="Marker2D" parent="TablePoints"]
-position = Vector2(-226, 0)
+[node name="left-seat" type="Node2D" parent="TablePoints/Table1/Seats"]
+position = Vector2(20, 0)
+
+[node name="right-seat" type="Node2D" parent="TablePoints/Table1/Seats"]
+position = Vector2(-20, 0)
+
+[node name="Table2" type="Node2D" parent="TablePoints"]
+position = Vector2(480, 68)
+scale = Vector2(4, 4)
+
+[node name="Sprite" type="Sprite2D" parent="TablePoints/Table2"]
+texture = ExtResource("15_gvfgv")
+
+[node name="Seats" type="Node2D" parent="TablePoints/Table2"]
+
+[node name="left-seat" type="Node2D" parent="TablePoints/Table2/Seats"]
+position = Vector2(20, 0)
+
+[node name="right-seat" type="Node2D" parent="TablePoints/Table2/Seats"]
+position = Vector2(-20, 0)
+
+[node name="Table3" type="Node2D" parent="TablePoints"]
+position = Vector2(710, 68)
+scale = Vector2(4, 4)
+
+[node name="Sprite" type="Sprite2D" parent="TablePoints/Table3"]
+texture = ExtResource("15_gvfgv")
+
+[node name="Seats" type="Node2D" parent="TablePoints/Table3"]
+
+[node name="left-seat" type="Node2D" parent="TablePoints/Table3/Seats"]
+position = Vector2(20, 0)
+
+[node name="right-seat" type="Node2D" parent="TablePoints/Table3/Seats"]
+position = Vector2(-20, 0)
+
+[node name="Table4" type="Node2D" parent="TablePoints"]
+position = Vector2(-250, 68)
+scale = Vector2(4, 4)
+
+[node name="Sprite" type="Sprite2D" parent="TablePoints/Table4"]
+texture = ExtResource("15_gvfgv")
+
+[node name="Seats" type="Node2D" parent="TablePoints/Table4"]
+
+[node name="left-seat" type="Node2D" parent="TablePoints/Table4/Seats"]
+position = Vector2(20, 0)
+
+[node name="right-seat" type="Node2D" parent="TablePoints/Table4/Seats"]
+position = Vector2(-20, 0)
+
+[node name="Table5" type="Node2D" parent="TablePoints"]
+position = Vector2(-480, 68)
+scale = Vector2(4, 4)
+
+[node name="Sprite" type="Sprite2D" parent="TablePoints/Table5"]
+texture = ExtResource("15_gvfgv")
+
+[node name="Seats" type="Node2D" parent="TablePoints/Table5"]
+
+[node name="left-seat" type="Node2D" parent="TablePoints/Table5/Seats"]
+position = Vector2(20, 0)
+
+[node name="right-seat" type="Node2D" parent="TablePoints/Table5/Seats"]
+position = Vector2(-20, 0)
+
+[node name="Table6" type="Node2D" parent="TablePoints"]
+position = Vector2(-710, 68)
+scale = Vector2(4, 4)
+
+[node name="Sprite" type="Sprite2D" parent="TablePoints/Table6"]
+texture = ExtResource("15_gvfgv")
+
+[node name="Seats" type="Node2D" parent="TablePoints/Table6"]
+
+[node name="left-seat" type="Node2D" parent="TablePoints/Table6/Seats"]
+position = Vector2(20, 0)
+
+[node name="right-seat" type="Node2D" parent="TablePoints/Table6/Seats"]
+position = Vector2(-20, 0)
 
 [connection signal="pressed" from="CanvasLayer/Button" to="Camera2D" method="_on_button_pressed"]
