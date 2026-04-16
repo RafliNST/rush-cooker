@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci4l7yxxlqvq5"]
+
+[ext_resource type="Texture2D" uid="uid://m3fsvsu5s5ej" path="res://textures/sprites/paralax-bg/table-sprite.png" id="1_dc6ci"]
+[ext_resource type="Script" path="res://scripts/table.gd" id="1_yu8gl"]
+
+[node name="table" type="Node2D"]
+position = Vector2(250, 68)
+scale = Vector2(4, 4)
+script = ExtResource("1_yu8gl")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_dc6ci")
+
+[node name="Seats" type="Node2D" parent="."]
+
+[node name="left-seat" type="Node2D" parent="Seats"]
+position = Vector2(20, 0)
+
+[node name="right-seat" type="Node2D" parent="Seats"]
+position = Vector2(-20, 0)
