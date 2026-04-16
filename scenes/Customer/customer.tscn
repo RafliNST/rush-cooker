@@ -1,9 +1,25 @@
-[gd_scene load_steps=14 format=3 uid="uid://c34rkf3xyludj"]
+[gd_scene load_steps=18 format=3 uid="uid://c34rkf3xyludj"]
 
 [ext_resource type="Script" path="res://scripts/Customer/customer.gd" id="1_impmu"]
 [ext_resource type="Texture2D" uid="uid://bwho5o0b3unm6" path="res://textures/sprites/rail-sprite-16x16.png" id="2_rmw0d"]
 [ext_resource type="Texture2D" uid="uid://cb2ub3ylefvc" path="res://textures/sprites/customer/16x32 All Animations.png" id="3_fnux6"]
 [ext_resource type="Texture2D" uid="uid://ti1svonowg6d" path="res://textures/sprites/customer/16x32 Walk-Sheet.png" id="3_qkihl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju4r0"]
+atlas = ExtResource("3_fnux6")
+region = Rect2(96, 192, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty61i"]
+atlas = ExtResource("3_fnux6")
+region = Rect2(112, 192, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcpfx"]
+atlas = ExtResource("3_fnux6")
+region = Rect2(128, 192, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnup7"]
+atlas = ExtResource("3_fnux6")
+region = Rect2(144, 192, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onmbo"]
 atlas = ExtResource("3_fnux6")
@@ -35,6 +51,23 @@ region = Rect2(48, 64, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gkviu"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ju4r0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty61i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qcpfx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnup7")
+}],
+"loop": true,
+"name": &"eat",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_onmbo")
@@ -94,9 +127,9 @@ texture = ExtResource("2_rmw0d")
 position = Vector2(0, -50)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_gkviu")
-animation = &"idle"
+animation = &"eat"
 autoplay = "walk"
-frame_progress = 0.933682
+frame_progress = 0.808331
 
 [node name="Area2D" type="Area2D" parent="CustomerSprite"]
 scale = Vector2(0.25, 0.25)
