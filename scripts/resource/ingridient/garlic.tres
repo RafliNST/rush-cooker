@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Ingridient" load_steps=5 format=3 uid="uid://np0lcfhp2yv7"]
+[gd_resource type="Resource" script_class="Ingridient" load_steps=5 format=3 uid="uid://87skqfecoanb"]
 
 [ext_resource type="Script" path="res://scripts/resource/ingridient/ingridient.gd" id="1_4m5jf"]
 [ext_resource type="AudioStream" uid="uid://clu1ealnfdp3w" path="res://musics/SFX/hat-output.mp3" id="1_xi5as"]
@@ -6,7 +6,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ng0mn"]
 atlas = ExtResource("3_ccdfp")
-region = Rect2(0, 0, 16, 16)
+region = Rect2(0, 16, 16, 16)
 
 [resource]
 script = ExtResource("1_4m5jf")

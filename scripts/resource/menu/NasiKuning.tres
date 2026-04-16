@@ -1,15 +1,15 @@
 [gd_resource type="Resource" script_class="Menu" load_steps=20 format=3 uid="uid://sy5okdw5dcy1"]
 
 [ext_resource type="AudioStream" uid="uid://b7e6ynwffmkov" path="res://musics/BGM/BGM-dari-Kokonut/thrill.mp3" id="1_3h3bs"]
-[ext_resource type="Texture2D" uid="uid://3qaj4tsfsaio" path="res://textures/sprites/vegetables-16x16.png" id="2_lr0ro"]
+[ext_resource type="Texture2D" uid="uid://dx4l6shcriqsv" path="res://textures/sprites/rush-cooker-16x16.png" id="2_cx561"]
 [ext_resource type="Script" path="res://scripts/resource/menu_item/menu_item.gd" id="3_b2j7p"]
 [ext_resource type="Script" path="res://scripts/resource/menu/menu.gd" id="5_r2e4e"]
-[ext_resource type="Resource" uid="uid://yur05dr7nr6o" path="res://scripts/resource/ingridient/onion.tres" id="5_rwhna"]
-[ext_resource type="Resource" uid="uid://87skqfecoanb" path="res://scripts/resource/ingridient/tomato.tres" id="5_xuk22"]
+[ext_resource type="Resource" uid="uid://yur05dr7nr6o" path="res://scripts/resource/ingridient/red_onion.tres" id="5_rwhna"]
+[ext_resource type="Resource" uid="uid://87skqfecoanb" path="res://scripts/resource/ingridient/garlic.tres" id="5_xuk22"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3ceyu"]
-atlas = ExtResource("2_lr0ro")
-region = Rect2(11, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdx3n"]
+atlas = ExtResource("2_cx561")
+region = Rect2(0, 48, 16, 16)
 
 [sub_resource type="Resource" id="Resource_8oh8m"]
 script = ExtResource("3_b2j7p")
@@ -86,7 +86,7 @@ lane_pos = 1
 [resource]
 script = ExtResource("5_r2e4e")
 name = "Nasi Kuning"
-icon = SubResource("AtlasTexture_3ceyu")
+icon = SubResource("AtlasTexture_qdx3n")
 BGM = ExtResource("1_3h3bs")
 BPM = 106
 price = 130

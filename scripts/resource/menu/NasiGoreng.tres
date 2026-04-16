@@ -2,14 +2,14 @@
 
 [ext_resource type="AudioStream" uid="uid://7brys7450o7t" path="res://musics/dummy/ヨルシカ - 藍二乗.mp3" id="1_0a2ai"]
 [ext_resource type="Script" path="res://scripts/resource/menu_item/menu_item.gd" id="1_36g0l"]
+[ext_resource type="Texture2D" uid="uid://dx4l6shcriqsv" path="res://textures/sprites/rush-cooker-16x16.png" id="2_acti1"]
 [ext_resource type="Script" path="res://scripts/resource/menu/menu.gd" id="2_gsjgc"]
-[ext_resource type="Texture2D" uid="uid://3qaj4tsfsaio" path="res://textures/sprites/vegetables-16x16.png" id="2_w83aw"]
-[ext_resource type="Resource" uid="uid://yur05dr7nr6o" path="res://scripts/resource/ingridient/onion.tres" id="5_404nj"]
-[ext_resource type="Resource" uid="uid://87skqfecoanb" path="res://scripts/resource/ingridient/tomato.tres" id="5_nq0cv"]
+[ext_resource type="Resource" uid="uid://yur05dr7nr6o" path="res://scripts/resource/ingridient/red_onion.tres" id="5_404nj"]
+[ext_resource type="Resource" uid="uid://87skqfecoanb" path="res://scripts/resource/ingridient/garlic.tres" id="5_nq0cv"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_carmo"]
-atlas = ExtResource("2_w83aw")
-region = Rect2(8, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8txa"]
+atlas = ExtResource("2_acti1")
+region = Rect2(0, 32, 16, 16)
 
 [sub_resource type="Resource" id="Resource_8oh8m"]
 script = ExtResource("1_36g0l")
@@ -32,7 +32,7 @@ lane_pos = 0
 [resource]
 script = ExtResource("2_gsjgc")
 name = "Nasi Goreng"
-icon = SubResource("AtlasTexture_carmo")
+icon = SubResource("AtlasTexture_h8txa")
 BGM = ExtResource("1_0a2ai")
 BPM = 210
 price = 110

@@ -22,7 +22,7 @@ StateMachine="*res://scenes-movable/state_machine.tscn"
 [display]
 
 window/size/viewport_height=680
-window/size/resizable=false
+window/stretch/mode="viewport"
 window/vsync/vsync_mode=0
 
 [input]

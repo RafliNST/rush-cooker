@@ -16,10 +16,10 @@ note_scene = ExtResource("3_0diex")
 [node name="NoteSpawner" parent="." instance=ExtResource("4_e2t46")]
 position = Vector2(0, -500)
 distance_to_score = {
-"bad": 0.5,
+"bad": 0.43,
 "destroy": 0.35,
-"good": 0.45,
-"perfect": 0.38
+"good": 0.41,
+"perfect": 0.39
 }
 
 [node name="NoteTimer" type="Timer" parent="."]

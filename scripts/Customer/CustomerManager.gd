@@ -60,7 +60,8 @@ func _on_spawn_new_customer_timeout() -> void:
 	
 	var customer = customer_scene.instantiate()
 	spawn_points.pick_random().add_child(customer)
-	customer.initialize(seat,menu)
+	customer.initialize(seat,menu, \
+		true if seat.position.x > 0 else false)
 
 func _on_order_complete(customer: Customer) -> void:
 	set_seat(customer.seat_pos, TABLE_AVAILABILITY.YES)

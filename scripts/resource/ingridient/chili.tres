@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Ingridient" load_steps=5 format=3 uid="uid://b8utqwor7ge81"]
+
+[ext_resource type="AudioStream" uid="uid://drpl3ncdw1x8u" path="res://musics/SFX/Guitar/gtr-bendup-1.mp3" id="1_k3j1b"]
+[ext_resource type="Script" path="res://scripts/resource/ingridient/ingridient.gd" id="2_oid4w"]
+[ext_resource type="Texture2D" uid="uid://dx4l6shcriqsv" path="res://textures/sprites/rush-cooker-16x16.png" id="3_amsi5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlt8c"]
+atlas = ExtResource("3_amsi5")
+region = Rect2(32, 16, 16, 16)
+
+[resource]
+script = ExtResource("2_oid4w")
+sprite = SubResource("AtlasTexture_nlt8c")
+SFX = ExtResource("1_k3j1b")
