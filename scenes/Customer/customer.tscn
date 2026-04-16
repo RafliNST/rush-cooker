@@ -1,13 +1,81 @@
-[gd_scene load_steps=5 format=3 uid="uid://c34rkf3xyludj"]
+[gd_scene load_steps=14 format=3 uid="uid://c34rkf3xyludj"]
 
 [ext_resource type="Script" path="res://scripts/Customer/customer.gd" id="1_impmu"]
-[ext_resource type="Texture2D" uid="uid://cibhmqhbvo8ch" path="res://icon.svg" id="1_p0q3p"]
 [ext_resource type="Texture2D" uid="uid://bwho5o0b3unm6" path="res://textures/sprites/rail-sprite-16x16.png" id="2_rmw0d"]
+[ext_resource type="Texture2D" uid="uid://cb2ub3ylefvc" path="res://textures/sprites/customer/16x32 All Animations.png" id="3_fnux6"]
+[ext_resource type="Texture2D" uid="uid://ti1svonowg6d" path="res://textures/sprites/customer/16x32 Walk-Sheet.png" id="3_qkihl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onmbo"]
+atlas = ExtResource("3_fnux6")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfr54"]
+atlas = ExtResource("3_fnux6")
+region = Rect2(32, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_id2aj"]
+atlas = ExtResource("3_fnux6")
+region = Rect2(16, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmo10"]
+atlas = ExtResource("3_qkihl")
+region = Rect2(0, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8q5pq"]
+atlas = ExtResource("3_qkihl")
+region = Rect2(16, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flgkd"]
+atlas = ExtResource("3_qkihl")
+region = Rect2(32, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewnyn"]
+atlas = ExtResource("3_qkihl")
+region = Rect2(48, 64, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gkviu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onmbo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfr54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onmbo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_id2aj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmo10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8q5pq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flgkd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewnyn")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kp2oo"]
 
 [node name="Customer" type="Node2D"]
 script = ExtResource("1_impmu")
+mov_speed = 230.0
+waiting_time = 5.0
 
 [node name="PatientTimer" type="Timer" parent="."]
 one_shot = true
@@ -22,14 +90,21 @@ texture = ExtResource("2_rmw0d")
 
 [node name="OnScreen Notifier" type="VisibleOnScreenNotifier2D" parent="."]
 
-[node name="CustomerSprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_p0q3p")
+[node name="CustomerSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -50)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_gkviu")
+animation = &"idle"
+autoplay = "walk"
+frame_progress = 0.933682
 
 [node name="Area2D" type="Area2D" parent="CustomerSprite"]
+scale = Vector2(0.25, 0.25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CustomerSprite/Area2D"]
 scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_kp2oo")
 
+[connection signal="timeout" from="PatientTimer" to="." method="_on_patient_timer_timeout"]
 [connection signal="screen_exited" from="OnScreen Notifier" to="." method="_on_on_screen_notifier_screen_exited"]
 [connection signal="input_event" from="CustomerSprite/Area2D" to="." method="_on_area_2d_input_event"]

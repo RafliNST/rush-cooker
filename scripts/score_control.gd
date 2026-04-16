@@ -19,6 +19,9 @@ func update_score(note_score: Note.SCORE_STATE) -> void:
 	score_label.text = str(score)
 	
 func order_complete(customer: Customer) -> void:
+	if not customer.is_menu_served:
+		return
+	
 	var menu_score = customer.menu.price * \
 		PlayerTenant.Instance.menu_performane
 	score += menu_score
