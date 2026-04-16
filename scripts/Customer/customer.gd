@@ -45,7 +45,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 
 func receive_order() -> void:
 	if not NoteSpawner.Instance.menu_ready or \
-		order_state == ORDER_STATE.RETURN:
+		order_state != ORDER_STATE.WAITING:
 		return
 	
 	if Conductor.Instance.current_menu == menu:

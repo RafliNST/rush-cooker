@@ -31,8 +31,8 @@ size = Vector2i(300, 680)
 render_target_update_mode = 4
 
 [node name="Conductor" parent="GameContainer/HBoxContainer/RhythmScene/SubViewport" instance=ExtResource("1_pbw8e")]
-offset = 10.0
-beat_delay = 7.0
+offset = 8.0
+beat_delay = 13.0
 
 [node name="TenantScene" type="SubViewportContainer" parent="GameContainer/HBoxContainer"]
 texture_filter = 1

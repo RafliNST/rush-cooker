@@ -91,7 +91,9 @@ script = ExtResource("1_yhvld")
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_duu7v")
 animation = &"cooking"
-frame_progress = 0.119609
+autoplay = "idle"
+frame = 1
+frame_progress = 0.9981
 
 [node name="TenantSprite" type="Sprite2D" parent="PlayerSprite"]
 position = Vector2(-3, 4)

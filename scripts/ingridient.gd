@@ -17,7 +17,7 @@ var target_pos: Vector2
 var ingridient: Ingridient
 var beat_number := 0
 
-var has_emit := false
+#var has_emit := false
 
 var on_destroy := false
 var process := 0.0 :
@@ -25,21 +25,23 @@ var process := 0.0 :
 		process = clamp(value,0,1)
 		
 		if not on_destroy:
-			if process == 0:
+			if process <= NoteSpawner.Instance.distance_to_score['destroy']:
 				score_state = SCORE_STATE.BAD
 				on_destroy = true
 				destroy_timer.start()
-			elif process < .38:
+			elif process < NoteSpawner.Instance.distance_to_score['perfect']:
 				score_state = SCORE_STATE.PERFECT
-			elif process < .45:
+			elif process < NoteSpawner.Instance.distance_to_score['good']:
 				score_state = SCORE_STATE.GOOD
-			elif process < .5:
+			elif process < NoteSpawner.Instance.distance_to_score['bad']:
 				score_state = SCORE_STATE.BAD
 	get:
 		return process
 
 func _process(_delta: float) -> void:
-	process = (beat_number - Conductor.Instance.get_current_beat_pos()) / Conductor.Instance.beat_delay
+	process = ((beat_number - Conductor.Instance.get_current_beat_pos()) / \
+		Conductor.Instance.beat_delay) / \
+		NoteSpawner.Instance.distance_to_score['perfect']
 	position = target_pos.lerp(spawn_pos, process)
 
 func initialize(item: Ingridient, number: int, targetF: Vector2, audio_stream: AudioStreamPlayer):
@@ -55,20 +57,20 @@ func initialize(item: Ingridient, number: int, targetF: Vector2, audio_stream: A
 	destroy_timer.wait_time = .23
 
 func play_beat():
-	if score_state == SCORE_STATE.FORBID || has_emit:
+	if score_state == SCORE_STATE.FORBID || on_destroy:
 		return
 		
 	audio_output.stream = ingridient.SFX
 	audio_output.play()
 	
 	on_destroy = true
-	has_emit = true
-	ScoreManager.Instance.beat_triggered.emit(score_state if has_emit else SCORE_STATE.BAD)
+	#has_emit = true
+	ScoreManager.Instance.beat_triggered.emit(score_state if on_destroy else SCORE_STATE.BAD)
 	
 	queue_free()
 
 func _on_destroy_timer_timeout() -> void:
-	ScoreManager.Instance.beat_triggered.emit(score_state if has_emit else SCORE_STATE.BAD)
+	ScoreManager.Instance.beat_triggered.emit(score_state if on_destroy else SCORE_STATE.BAD)
 	queue_free()
 
 func _on_tree_exiting() -> void:

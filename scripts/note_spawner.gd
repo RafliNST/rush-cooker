@@ -5,6 +5,9 @@ class_name NoteSpawner
 static var Instance: NoteSpawner
 
 signal menu_complete
+
+@export var distance_to_score: Dictionary
+
 var menu_ready := false
 var note_spawned := -1:
 	get:
