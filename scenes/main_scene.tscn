@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ccjqxopub3fl"]
+[gd_scene load_steps=7 format=3 uid="uid://ccjqxopub3fl"]
 
 [ext_resource type="PackedScene" uid="uid://bntavy6d62b4f" path="res://scenes/conductor.tscn" id="1_pbw8e"]
 [ext_resource type="Script" path="res://scripts/game_viewport.gd" id="2_hr31o"]
 [ext_resource type="PackedScene" uid="uid://wmb7rrotmfad" path="res://scenes/game.tscn" id="3_dm5ba"]
 [ext_resource type="PackedScene" uid="uid://pddvifau75jp" path="res://scenes/UIs/rhythm_control.tscn" id="5_7sssm"]
 [ext_resource type="Script" path="res://scripts/score_control.gd" id="5_k7db3"]
+[ext_resource type="PackedScene" uid="uid://c67rqcml7baoq" path="res://scenes/day_cycle.tscn" id="6_pp6gi"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -94,4 +95,8 @@ theme_override_font_sizes/font_size = 36
 text = "0"
 horizontal_alignment = 1
 
+[node name="DayCycle" parent="." instance=ExtResource("6_pp6gi")]
+minutes_to_cycle = 1
+
 [connection signal="track_changed" from="GameContainer/HBoxContainer/RhythmScene/SubViewport/Conductor" to="ScoreLayer/ScoreControl" method="_on_conductor_track_changed"]
+[connection signal="day_finished" from="DayCycle" to="RhythmControl" method="_on_day_cycle_day_finished"]

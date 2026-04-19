@@ -38,7 +38,6 @@ func get_current_beat_pos() -> float:
 
 func setup_timer():
 	note_timer.wait_time = 60.0 / current_menu.BPM
-	print("Wait Time: " + str(note_timer.wait_time))
 	note_timer.start()
 
 func play_music():

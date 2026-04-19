@@ -17,6 +17,18 @@ enum TABLE_AVAILABILITY { NO, YES }
 var seat_points: Array[Node2D]
 var seats_dict := { }
 
+var left_point_children := 0:
+	get:
+		return $LeftSpawn.get_child_count()
+
+var right_point_children := 0:
+	get:
+		return $RightSpawn.get_child_count()
+
+var spawn_point_children_sum := 0:
+	get:
+		return left_point_children + right_point_children
+
 @onready var new_customer_timer := $SpawnNewCustomer
 
 func _enter_tree() -> void:
@@ -49,6 +61,9 @@ func set_seat(point: Node2D, status: TABLE_AVAILABILITY) -> void:
 		seats_dict[point] = status
 	
 func _on_spawn_new_customer_timeout() -> void:
+	if DayCycle.Instance.cycle_complete:
+		return
+	
 	var seat = get_available_seats()
 	var menu = menu_selection.pick_random()
 	

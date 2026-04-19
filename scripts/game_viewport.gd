@@ -20,6 +20,10 @@ func _process(delta: float) -> void:
 		change_length(delta, growing_state)
 		
 func on_camera_focus() -> void:
+	if DayCycle.Instance.cycle_complete \
+		and CustomerManager.Instance.spawn_point_children_sum < 1:
+		return
+	
 	growing_state = GROWING_STATE.SHRINK
 	
 func on_camera_unfocus() -> void:

@@ -43,7 +43,14 @@ func hide_node(delta: float) -> void:
 		node_visibility = NODE_VISIBLITY_STATUS.IDLE
 
 func show_node(delta: float) -> void:
+	if DayCycle.Instance.cycle_complete \
+		and CustomerManager.Instance.spawn_point_children_sum < 1:
+		return
+	
 	if offset.x > 0:
 		offset.x -= speed * delta
 	else:
 		node_visibility = NODE_VISIBLITY_STATUS.IDLE
+
+func _on_day_cycle_day_finished() -> void:
+	node_visibility = NODE_VISIBLITY_STATUS.HIDDEN

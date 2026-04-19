@@ -23,14 +23,20 @@ func _ready() -> void:
 		Paralax.Instance.camera_to_center.connect(animation_to_cook)
 		
 	ready_menu_icon.hide()
+	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("end_day"):
+		if not DayCycle.Instance.cycle_complete \
+			and not CustomerManager.Instance.spawn_point_children_sum < 1:
+			return
+		
+		# reload tree / scene
+		get_tree().reload_current_scene()
 
 func dish_ready() -> void:
 	ready_menu_icon.show()
 	menu_performane = float(ScoreManager.Instance.current_score) / \
 		Conductor.Instance.current_menu.max_score
-	
-	print("Performance: " + str(ScoreManager.Instance.current_score))
-	print("Score: " + str(Conductor.Instance.current_menu.max_score))
 	
 func track_changed(menu: Menu) -> void:
 	ready_menu_icon.hide()

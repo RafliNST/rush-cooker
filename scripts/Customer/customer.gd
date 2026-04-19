@@ -45,6 +45,11 @@ func move_to_(target: Vector2, delta: float) -> void:
 		mov_speed * delta)
 	
 	if global_position.distance_to(target) < .1:
+		if order_state == ORDER_STATE.RETURN:
+			if CustomerManager.Instance.spawn_point_children_sum == 1:
+				DayCycle.Instance.day_finished.emit()
+			queue_free()
+		
 		order_state = ORDER_STATE.WAITING
 		order_icon.show()
 		waiting_timer.start()
@@ -75,12 +80,9 @@ func receive_order() -> void:
 		
 		order_icon.hide()
 
-func _on_on_screen_notifier_screen_exited() -> void:
-	if order_state == ORDER_STATE.RETURN:
-		queue_free()
-
 func _on_patient_timer_timeout() -> void:
 	order_state = ORDER_STATE.RETURN
+	
 	order_icon.hide()
 	customer_sprite.play("walk")
 	if origin_pos.x < 0:

@@ -43,6 +43,7 @@ texture = ExtResource("2_gcd5r")
 
 [node name="back-wall" type="Parallax2D" parent="ParalaxBackground"]
 scale = Vector2(4, 4)
+scroll_scale = Vector2(0.8, 1)
 repeat_size = Vector2(320, 0)
 repeat_times = 3
 

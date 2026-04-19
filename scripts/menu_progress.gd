@@ -26,11 +26,9 @@ func update_progress(_score := Note.SCORE_STATE.PERFECT) -> void:
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_CUBIC)
 	tween.tween_property(self, "value", progress, duration)
-	print("Slider Value: " + str(value))
 
 func track_changed(menu: Menu) -> void:
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_trans(Tween.TRANS_CUBIC)
 	tween.tween_property(self, "value", 0, duration)
-	print("Slider Value: " + str(value))

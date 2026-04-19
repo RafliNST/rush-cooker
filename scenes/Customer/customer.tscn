@@ -108,6 +108,7 @@ animations = [{
 [node name="Customer" type="Node2D"]
 script = ExtResource("1_impmu")
 mov_speed = 180.0
+waiting_time = 3.0
 
 [node name="PatientTimer" type="Timer" parent="."]
 one_shot = true
@@ -119,8 +120,6 @@ position = Vector2(0, -4)
 position = Vector2(0, -120)
 scale = Vector2(4, 4)
 texture = ExtResource("2_rmw0d")
-
-[node name="OnScreen Notifier" type="VisibleOnScreenNotifier2D" parent="."]
 
 [node name="CustomerSprite" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
@@ -139,5 +138,4 @@ scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_kp2oo")
 
 [connection signal="timeout" from="PatientTimer" to="." method="_on_patient_timer_timeout"]
-[connection signal="screen_exited" from="OnScreen Notifier" to="." method="_on_on_screen_notifier_screen_exited"]
 [connection signal="input_event" from="CustomerSprite/Area2D" to="." method="_on_area_2d_input_event"]
