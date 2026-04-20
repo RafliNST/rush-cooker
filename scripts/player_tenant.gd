@@ -26,12 +26,10 @@ func _ready() -> void:
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("end_day"):
-		if not DayCycle.Instance.cycle_complete \
-			and not CustomerManager.Instance.spawn_point_children_sum < 1:
+		if CustomerManager.Instance.spawn_point_children_sum != 1:
 			return
 		
-		# reload tree / scene
-		get_tree().reload_current_scene()
+		DayCycle.Instance.day_finished.emit()
 
 func dish_ready() -> void:
 	ready_menu_icon.show()

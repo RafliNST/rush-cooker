@@ -1,16 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://ccjqxopub3fl"]
+[gd_scene load_steps=9 format=3 uid="uid://ccjqxopub3fl"]
 
 [ext_resource type="PackedScene" uid="uid://bntavy6d62b4f" path="res://scenes/conductor.tscn" id="1_pbw8e"]
 [ext_resource type="Script" path="res://scripts/game_viewport.gd" id="2_hr31o"]
 [ext_resource type="PackedScene" uid="uid://wmb7rrotmfad" path="res://scenes/game.tscn" id="3_dm5ba"]
 [ext_resource type="PackedScene" uid="uid://pddvifau75jp" path="res://scenes/UIs/rhythm_control.tscn" id="5_7sssm"]
 [ext_resource type="Script" path="res://scripts/score_control.gd" id="5_k7db3"]
+[ext_resource type="PackedScene" uid="uid://dmd3fh76cohxq" path="res://scenes/UIs/day_result_panel.tscn" id="6_53gor"]
 [ext_resource type="PackedScene" uid="uid://c67rqcml7baoq" path="res://scenes/day_cycle.tscn" id="6_pp6gi"]
+[ext_resource type="Script" path="res://scripts/day_result_panel.gd" id="7_jsdxm"]
 
 [node name="MainScene" type="Node2D"]
 
 [node name="GameContainer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GameContainer"]
 anchors_preset = 1
@@ -30,7 +31,7 @@ size_flags_horizontal = 0
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 size = Vector2i(300, 680)
-render_target_update_mode = 0
+render_target_update_mode = 4
 
 [node name="Conductor" parent="GameContainer/HBoxContainer/RhythmScene/SubViewport" instance=ExtResource("1_pbw8e")]
 offset = 8.0
@@ -48,7 +49,7 @@ canvas_item_default_texture_filter = 0
 physics_object_picking = true
 size = Vector2i(852, 680)
 size_2d_override_stretch = true
-render_target_update_mode = 0
+render_target_update_mode = 4
 script = ExtResource("2_hr31o")
 grow_speed = 500
 
@@ -96,210 +97,8 @@ theme_override_font_sizes/font_size = 36
 text = "0"
 horizontal_alignment = 1
 
-[node name="DayResultPanel" type="Panel" parent="ScoreLayer"]
-anchors_preset = -1
-anchor_left = 0.2
-anchor_top = 0.13
-anchor_right = 0.8
-anchor_bottom = 1.0
-offset_top = 21.6
-offset_bottom = -120.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Container" type="Control" parent="ScoreLayer/DayResultPanel"]
-layout_mode = 1
-anchor_top = -0.07
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-
-[node name="Label" type="Label" parent="ScoreLayer/DayResultPanel/Container"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = -0.05
-anchor_right = 0.5
-anchor_bottom = 0.025
-offset_left = -345.5
-offset_right = 345.5
-offset_bottom = 53.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 42
-text = "Today Reports"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="BoxContainer" type="BoxContainer" parent="ScoreLayer/DayResultPanel/Container"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.05
-anchor_top = 0.15
-anchor_right = 0.95
-anchor_bottom = 0.8
-grow_horizontal = 2
-grow_vertical = 2
-vertical = true
-
-[node name="LeftBoxes" type="HBoxContainer" parent="ScoreLayer/DayResultPanel/Container/BoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="CustomerHandled" type="Panel" parent="ScoreLayer/DayResultPanel/Container/BoxContainer/LeftBoxes"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="StatHeader" type="Label" parent="ScoreLayer/DayResultPanel/Container/BoxContainer/LeftBoxes/CustomerHandled"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 10.0
-offset_bottom = 49.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 28
-text = "Customer Handled"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="StatValue" type="Label" parent="ScoreLayer/DayResultPanel/Container/BoxContainer/LeftBoxes/CustomerHandled"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 28
-text = "98"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="UnhandledCustomer" type="Panel" parent="ScoreLayer/DayResultPanel/Container/BoxContainer/LeftBoxes"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="StatHeader" type="Label" parent="ScoreLayer/DayResultPanel/Container/BoxContainer/LeftBoxes/UnhandledCustomer"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 10.0
-offset_bottom = 49.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 28
-text = "UnhandledCustomer"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="StatValue" type="Label" parent="ScoreLayer/DayResultPanel/Container/BoxContainer/LeftBoxes/UnhandledCustomer"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 28
-text = "98"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="RightBoxes" type="HBoxContainer" parent="ScoreLayer/DayResultPanel/Container/BoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="BestCombo" type="Panel" parent="ScoreLayer/DayResultPanel/Container/BoxContainer/RightBoxes"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="StatHeader" type="Label" parent="ScoreLayer/DayResultPanel/Container/BoxContainer/RightBoxes/BestCombo"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 10.0
-offset_bottom = 49.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 28
-text = "Best Combo"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="StatValue" type="Label" parent="ScoreLayer/DayResultPanel/Container/BoxContainer/RightBoxes/BestCombo"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 28
-text = "98x"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PerfectHits" type="Panel" parent="ScoreLayer/DayResultPanel/Container/BoxContainer/RightBoxes"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="StatHeader" type="Label" parent="ScoreLayer/DayResultPanel/Container/BoxContainer/RightBoxes/PerfectHits"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 10.0
-offset_bottom = 49.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 28
-text = "Perfect Hit(s)"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="StatValue" type="Label" parent="ScoreLayer/DayResultPanel/Container/BoxContainer/RightBoxes/PerfectHits"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 28
-text = "98x"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="IncomePanel" type="Panel" parent="ScoreLayer/DayResultPanel/Container"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.05
-anchor_top = 0.82
-anchor_right = 0.95
-anchor_bottom = 0.98
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="StatHeader" type="Label" parent="ScoreLayer/DayResultPanel/Container/IncomePanel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.02
-anchor_right = 0.021
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 28
-text = "Today Income:"
-vertical_alignment = 1
-
-[node name="StatValue" type="Label" parent="ScoreLayer/DayResultPanel/Container/IncomePanel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.98
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 28
-text = "Rp980000"
-horizontal_alignment = 2
-vertical_alignment = 1
+[node name="DayResultPanel" parent="ScoreLayer" instance=ExtResource("6_53gor")]
+script = ExtResource("7_jsdxm")
 
 [node name="NextDayButton" type="Button" parent="ScoreLayer/DayResultPanel"]
 layout_mode = 1
@@ -311,6 +110,7 @@ offset_left = -52.5
 offset_right = 52.5
 offset_bottom = 39.0
 grow_horizontal = 2
+grow_vertical = 0
 theme_override_font_sizes/font_size = 22
 text = "Next Day"
 
@@ -318,4 +118,6 @@ text = "Next Day"
 minutes_to_cycle = 1
 
 [connection signal="track_changed" from="GameContainer/HBoxContainer/RhythmScene/SubViewport/Conductor" to="ScoreLayer/ScoreControl" method="_on_conductor_track_changed"]
+[connection signal="pressed" from="ScoreLayer/DayResultPanel/NextDayButton" to="ScoreLayer/DayResultPanel" method="_on_next_day_button_pressed"]
 [connection signal="day_finished" from="DayCycle" to="RhythmControl" method="_on_day_cycle_day_finished"]
+[connection signal="day_finished" from="DayCycle" to="ScoreLayer/DayResultPanel" method="_on_day_cycle_day_finished"]

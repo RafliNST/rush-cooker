@@ -46,8 +46,6 @@ func move_to_(target: Vector2, delta: float) -> void:
 	
 	if global_position.distance_to(target) < .1:
 		if order_state == ORDER_STATE.RETURN:
-			if CustomerManager.Instance.spawn_point_children_sum == 1:
-				DayCycle.Instance.day_finished.emit()
 			queue_free()
 		
 		order_state = ORDER_STATE.WAITING

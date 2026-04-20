@@ -1,0 +1,207 @@
+[gd_scene format=3 uid="uid://dmd3fh76cohxq"]
+
+[node name="DayResultPanel" type="Panel"]
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.13
+anchor_right = 0.8
+anchor_bottom = 1.0
+offset_top = 21.6
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 1
+anchor_top = -0.07
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Container"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -0.05
+anchor_right = 0.5
+anchor_bottom = 0.025
+offset_left = -345.5
+offset_right = 345.5
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 42
+text = "Today Reports"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BoxContainer" type="BoxContainer" parent="Container"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.15
+anchor_right = 0.95
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+vertical = true
+
+[node name="LeftBoxes" type="HBoxContainer" parent="Container/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CustomerHandled" type="Panel" parent="Container/BoxContainer/LeftBoxes"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="StatHeader" type="Label" parent="Container/BoxContainer/LeftBoxes/CustomerHandled"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 10.0
+offset_bottom = 49.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "Customer Handled"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatValue" type="Label" parent="Container/BoxContainer/LeftBoxes/CustomerHandled"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "98"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UnhandledCustomer" type="Panel" parent="Container/BoxContainer/LeftBoxes"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="StatHeader" type="Label" parent="Container/BoxContainer/LeftBoxes/UnhandledCustomer"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 10.0
+offset_bottom = 49.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "UnhandledCustomer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatValue" type="Label" parent="Container/BoxContainer/LeftBoxes/UnhandledCustomer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "98"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightBoxes" type="HBoxContainer" parent="Container/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BestCombo" type="Panel" parent="Container/BoxContainer/RightBoxes"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="StatHeader" type="Label" parent="Container/BoxContainer/RightBoxes/BestCombo"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 10.0
+offset_bottom = 49.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "Best Combo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatValue" type="Label" parent="Container/BoxContainer/RightBoxes/BestCombo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "98x"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PerfectHits" type="Panel" parent="Container/BoxContainer/RightBoxes"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="StatHeader" type="Label" parent="Container/BoxContainer/RightBoxes/PerfectHits"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 10.0
+offset_bottom = 49.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "Perfect Hit(s)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatValue" type="Label" parent="Container/BoxContainer/RightBoxes/PerfectHits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "98x"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IncomePanel" type="Panel" parent="Container"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.82
+anchor_right = 0.95
+anchor_bottom = 0.98
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StatHeader" type="Label" parent="Container/IncomePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_right = 0.021
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "Today Income:"
+vertical_alignment = 1
+
+[node name="StatValue" type="Label" parent="Container/IncomePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_right = 0.98
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 28
+text = "Rp980000"
+horizontal_alignment = 2
+vertical_alignment = 1

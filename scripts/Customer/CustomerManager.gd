@@ -17,6 +17,9 @@ enum TABLE_AVAILABILITY { NO, YES }
 var seat_points: Array[Node2D]
 var seats_dict := { }
 
+var customer_served := 0
+var unhandled_customer := 0
+
 var left_point_children := 0:
 	get:
 		return $LeftSpawn.get_child_count()
@@ -62,6 +65,7 @@ func set_seat(point: Node2D, status: TABLE_AVAILABILITY) -> void:
 	
 func _on_spawn_new_customer_timeout() -> void:
 	if DayCycle.Instance.cycle_complete:
+		new_customer_timer.stop()
 		return
 	
 	var seat = get_available_seats()
@@ -79,4 +83,9 @@ func _on_spawn_new_customer_timeout() -> void:
 		true if seat.position.x > 0 else false)
 
 func _on_order_complete(customer: Customer) -> void:
+	if customer.is_menu_served:
+		customer_served += 1
+	else:
+		unhandled_customer += 1
+	
 	set_seat(customer.seat_pos, TABLE_AVAILABILITY.YES)

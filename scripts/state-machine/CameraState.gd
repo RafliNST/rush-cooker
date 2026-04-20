@@ -7,7 +7,8 @@ class_name CameraState
 @export var camera_limit_right: float
 
 func _ready() -> void:
-	Paralax.Instance.camera_move.connect(change_state_to_self)
+	if Paralax.Instance != null:
+		Paralax.Instance.camera_move.connect(change_state_to_self)
 
 func Input_Handler(_event: InputEvent):
 	pass
