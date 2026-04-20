@@ -95,6 +95,81 @@ theme_override_font_sizes/font_size = 36
 text = "0"
 horizontal_alignment = 1
 
+[node name="DayResultPanel" type="Panel" parent="ScoreLayer"]
+anchors_preset = -1
+anchor_left = 0.27
+anchor_top = 0.13
+anchor_right = 0.77
+anchor_bottom = 0.75
+offset_top = 21.6
+offset_right = 6.10352e-05
+offset_bottom = -250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="Control" parent="ScoreLayer/DayResultPanel"]
+layout_mode = 1
+anchor_top = -0.07
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="ScoreLayer/DayResultPanel/Container"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -345.5
+offset_right = 345.5
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 38
+text = "Today Statistic"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Statistics" type="VBoxContainer" parent="ScoreLayer/DayResultPanel/Container"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.15
+anchor_right = 0.9
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="IncomeStatistic" type="HBoxContainer" parent="ScoreLayer/DayResultPanel/Container/Statistics"]
+layout_mode = 2
+alignment = 1
+
+[node name="StatLabel" type="Label" parent="ScoreLayer/DayResultPanel/Container/Statistics/IncomeStatistic"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Income"
+
+[node name="StatVal" type="Label" parent="ScoreLayer/DayResultPanel/Container/Statistics/IncomeStatistic"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "95"
+horizontal_alignment = 2
+
+[node name="CustomerStatistic" type="HBoxContainer" parent="ScoreLayer/DayResultPanel/Container/Statistics"]
+layout_mode = 2
+alignment = 1
+
+[node name="StatLabel" type="Label" parent="ScoreLayer/DayResultPanel/Container/Statistics/CustomerStatistic"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Customer Handled"
+
+[node name="StatVal" type="Label" parent="ScoreLayer/DayResultPanel/Container/Statistics/CustomerStatistic"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "9123"
+horizontal_alignment = 2
+
 [node name="DayCycle" parent="." instance=ExtResource("6_pp6gi")]
 minutes_to_cycle = 1
 
