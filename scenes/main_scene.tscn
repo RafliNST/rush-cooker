@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccjqxopub3fl"]
+[gd_scene load_steps=10 format=3 uid="uid://ccjqxopub3fl"]
 
 [ext_resource type="PackedScene" uid="uid://bntavy6d62b4f" path="res://scenes/conductor.tscn" id="1_pbw8e"]
 [ext_resource type="Script" path="res://scripts/game_viewport.gd" id="2_hr31o"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dmd3fh76cohxq" path="res://scenes/UIs/day_result_panel.tscn" id="6_53gor"]
 [ext_resource type="PackedScene" uid="uid://c67rqcml7baoq" path="res://scenes/day_cycle.tscn" id="6_pp6gi"]
 [ext_resource type="Script" path="res://scripts/day_result_panel.gd" id="7_jsdxm"]
+[ext_resource type="Resource" uid="uid://txglnfgseeqm" path="res://scripts/resource/save_file/SaveFile.tres" id="8_0jyho"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -99,6 +100,7 @@ horizontal_alignment = 1
 
 [node name="DayResultPanel" parent="ScoreLayer" instance=ExtResource("6_53gor")]
 script = ExtResource("7_jsdxm")
+save_file = ExtResource("8_0jyho")
 
 [node name="NextDayButton" type="Button" parent="ScoreLayer/DayResultPanel"]
 layout_mode = 1

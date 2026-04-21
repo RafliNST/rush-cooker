@@ -18,6 +18,7 @@ func _ready() -> void:
 func update_score(note_score: Note.SCORE_STATE) -> void:
 	score_label.text = str(score)
 	DayResultPanel.Instance.incomes_val.text = "Rp" + str(score)
+	DayResultPanel.Instance.save_file.last_incomes = score
 	
 func order_complete(customer: Customer) -> void:
 	if not customer.is_menu_served:
