@@ -26,7 +26,8 @@ func _ready() -> void:
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("end_day"):
-		if CustomerManager.Instance.spawn_point_children_sum != 1:
+		print("Children: " + str(CustomerManager.Instance.spawn_point_children_sum))
+		if CustomerManager.Instance.spawn_point_children_sum >= 1:
 			return
 		
 		DayCycle.Instance.day_finished.emit()
