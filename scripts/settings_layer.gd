@@ -38,3 +38,6 @@ func _center_window() -> void:
 		(screen.x - win.x) / 2,
 		(screen.y - win.y) / 2
 	))
+
+func _on_option_button_toggled(toggled_on: bool) -> void:
+	StateMachine.save_file.invert_input = toggled_on

@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://dpobwlmh4i8gy" path="res://musics/BGM/Space Music Pack/meet-the-princess.wav" id="9_88251"]
 
 [node name="EndingDialogue" type="Panel"]
+texture_filter = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

@@ -23,7 +23,8 @@ func _ready() -> void:
 		Paralax.Instance.camera_to_center.connect(animation_to_cook)
 	
 	ready_menu_icon.hide()
-	
+	StateMachine.save_file.day_cycle()
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("end_day"):
 		if CustomerManager.Instance.spawn_point_children_sum >= 1:

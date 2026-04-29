@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Rush Cooker"
 config/description="Sebagai mahasiswa perantauan yang hidup pas-pasan, ***** bingung tepat ketika libur semester dimulai karena usaha orangtuanya di daerah asal mengalami kerugian besar karena ditipu orang. Alhasil, dia pun harus memikirkan cara agar statusnya sebagai mahasiswa tidak berhenti"
-run/main_scene="res://scenes/main_menu.tscn"
+run/main_scene="res://scenes/main_scene.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 

@@ -6,10 +6,8 @@ extends CanvasLayer
 @export var menus : Array[Menu]
 
 @export var x_offset := 100
-@export var speed := 100.0
 
-enum NODE_VISIBLITY_STATUS { VISIBLE, IDLE, HIDDEN }
-var node_visibility := NODE_VISIBLITY_STATUS.IDLE
+var _tween: Tween
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,35 +20,23 @@ func _ready() -> void:
 		selector_container.add_child(selector)
 		selector.initialize(menu)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if node_visibility != NODE_VISIBLITY_STATUS.IDLE:
-		if node_visibility == NODE_VISIBLITY_STATUS.VISIBLE:
-			hide_node(delta)
-		elif node_visibility == NODE_VISIBLITY_STATUS.HIDDEN:
-			show_node(delta)
-
 func on_camera_focus() -> void:
-	node_visibility = NODE_VISIBLITY_STATUS.VISIBLE
+	if _tween and _tween.is_running():
+		_tween.kill()
 	
+	_tween = create_tween()
+	_tween.set_ease(Tween.EASE_IN_OUT)
+	_tween.set_trans(Tween.TRANS_CIRC)
+	_tween.tween_property(self, "offset:x", x_offset, .71)
+
 func on_camera_unfocus() -> void:
-	node_visibility = NODE_VISIBLITY_STATUS.HIDDEN
-
-func hide_node(delta: float) -> void:
-	if offset.x < x_offset:
-		offset.x += speed * delta
-	else:
-		node_visibility = NODE_VISIBLITY_STATUS.IDLE
-
-func show_node(delta: float) -> void:
-	if DayCycle.Instance.cycle_complete \
-		and CustomerManager.Instance.spawn_point_children_sum < 1:
-		return
+	if _tween and _tween.is_running():
+		_tween.kill()
 	
-	if offset.x > 0:
-		offset.x -= speed * delta
-	else:
-		node_visibility = NODE_VISIBLITY_STATUS.IDLE
+	_tween = create_tween()
+	_tween.set_ease(Tween.EASE_OUT)
+	_tween.set_trans(Tween.TRANS_CIRC)
+	_tween.tween_property(self, "offset:x", 0, .57)
 
 func _on_day_cycle_day_finished() -> void:
-	node_visibility = NODE_VISIBLITY_STATUS.HIDDEN
+	on_camera_unfocus()

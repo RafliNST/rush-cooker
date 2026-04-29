@@ -3,43 +3,27 @@ extends SubViewport
 @export var base_length := 852
 @export var extended_length := 1152
 
-enum GROWING_STATE { SHRINK, IDLE, GROW }
-@export var growing_state := GROWING_STATE.IDLE
-@export var grow_speed := 100
-
-enum ALREADY_MOVED { NO = 1, YES = 2 }
-var already_moved := ALREADY_MOVED.NO
+var _tween: Tween
 
 func _ready() -> void:
 	if Paralax.Instance != null:
 		Paralax.Instance.camera_move.connect(on_camera_unfocus)
 		Paralax.Instance.camera_to_center.connect(on_camera_focus)
-	
-func _process(delta: float) -> void:
-	if growing_state != GROWING_STATE.IDLE:
-		change_length(delta, growing_state)
-		
+
 func on_camera_focus() -> void:
-	if DayCycle.Instance.cycle_complete \
-		and CustomerManager.Instance.spawn_point_children_sum < 1:
-		return
+	if _tween and _tween.is_running():
+		_tween.kill()
 	
-	growing_state = GROWING_STATE.SHRINK
+	_tween = create_tween()
+	_tween.set_ease(Tween.EASE_OUT)
+	_tween.set_trans(Tween.TRANS_QUINT)
+	_tween.tween_property(self, "size:x", base_length, .47)
 	
 func on_camera_unfocus() -> void:
-	already_moved = ALREADY_MOVED.YES
-	growing_state = GROWING_STATE.GROW
-
-func change_length(delta:float, grow_state: GROWING_STATE) -> void:
-	var delta_x = grow_speed * delta
-	
-	if grow_state == GROWING_STATE.SHRINK:
-		if size.x - base_length != 0 and size.x >= base_length:
-			size.x -= delta
-		else:
-			growing_state = GROWING_STATE.IDLE
-	elif grow_state == GROWING_STATE.GROW and size.x <= extended_length:
-		if size.x - extended_length != 0:
-			size.x += delta_x * already_moved
-		else:
-			growing_state = GROWING_STATE.IDLE
+	if _tween and _tween.is_running():
+		_tween.kill()
+		
+	_tween = create_tween()
+	_tween.set_ease(Tween.EASE_IN)
+	_tween.set_trans(Tween.TRANS_BACK)
+	_tween.tween_property(self, "size:x", extended_length, .46)
