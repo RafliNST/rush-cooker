@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4teoy2velovj"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_2whpr"]
+[ext_resource type="Texture2D" uid="uid://cibhmqhbvo8ch" path="res://icon.svg" id="1_l4eye"]
+[ext_resource type="Texture2D" uid="uid://dx4l6shcriqsv" path="res://textures/sprites/rush-cooker-16x16.png" id="3_pjkft"]
+[ext_resource type="Texture2D" uid="uid://3qaj4tsfsaio" path="res://textures/sprites/vegetables-16x16.png" id="4_3grjy"]
+
+[node name="main_menu" type="Node2D"]
+position = Vector2(0, -2)
+script = ExtResource("1_2whpr")
+default_txt = ExtResource("1_l4eye")
+on_win_txt = ExtResource("3_pjkft")
+on_lose_txt = ExtResource("4_3grjy")
+
+[node name="MenuLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="MenuLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MenuLayer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.3
+anchor_right = 0.3
+anchor_bottom = 0.7
+grow_vertical = 2
+texture = ExtResource("1_l4eye")
+stretch_mode = 6
+
+[node name="menu-selection" type="Control" parent="MenuLayer/Panel"]
+layout_mode = 1
+anchor_left = 0.65
+anchor_top = 0.2
+anchor_right = 0.9
+anchor_bottom = 0.764
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="header" type="Label" parent="MenuLayer/Panel/menu-selection"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -0.05
+anchor_right = 0.5
+offset_left = -56.0
+offset_right = 56.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 52
+text = "RUSH COOKER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuLayer/Panel/menu-selection"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="new-game" type="Button" parent="MenuLayer/Panel/menu-selection/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "New Game"
+
+[node name="settings" type="Button" parent="MenuLayer/Panel/menu-selection/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Settings"
+
+[connection signal="pressed" from="MenuLayer/Panel/menu-selection/VBoxContainer/new-game" to="." method="_on_newgame_pressed"]
+[connection signal="pressed" from="MenuLayer/Panel/menu-selection/VBoxContainer/settings" to="." method="_on_settings_pressed"]

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="DialogueParagraph" load_steps=2 format=3 uid="uid://c61rlmw7qcm1w"]
+
+[ext_resource type="Script" path="res://scripts/resource/dialogue_paragraph/dialogue_paragraph.gd" id="1_x03ri"]
+
+[resource]
+script = ExtResource("1_x03ri")
+paragraph = "Malam ini kamu melayani banyak orang,
+tapi lebih banyak lagi yang pergi sebelum dilayani.
+
+Antrian sempat mengular, dan kamu tidak
+sanggup mengikuti ritmenya.
+
+Beberapa dari mereka hanya diam, lalu berlalu.
+Kabar buruk menyebar cepat di lingkungan kos.
+
+Besok mungkin mereka tidak akan datang lagi. Semua dari mereka.
+Kamu merapikan wajan, mencoba tidak terlalu memikirkannya"

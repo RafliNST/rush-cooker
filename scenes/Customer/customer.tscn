@@ -108,7 +108,7 @@ animations = [{
 [node name="Customer" type="Node2D"]
 script = ExtResource("1_impmu")
 mov_speed = 180.0
-waiting_time = 3.0
+waiting_time = 37.0
 
 [node name="PatientTimer" type="Timer" parent="."]
 one_shot = true

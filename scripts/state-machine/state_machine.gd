@@ -1,5 +1,6 @@
 extends Node
 
+@export var save_file: SaveFile
 @export var initial_state: State
 
 var current_state: State

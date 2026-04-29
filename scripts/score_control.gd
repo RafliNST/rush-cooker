@@ -14,11 +14,8 @@ var max_menu_progress := 0:
 
 func _ready() -> void:
 	CustomerManager.Instance.order_complete.connect(order_complete)
-	
-func update_score(note_score: Note.SCORE_STATE) -> void:
-	score_label.text = str(score)
-	DayResultPanel.Instance.incomes_val.text = "Rp" + str(score)
-	
+
+
 func order_complete(customer: Customer) -> void:
 	if not customer.is_menu_served:
 		return
@@ -26,4 +23,9 @@ func order_complete(customer: Customer) -> void:
 	var menu_score = customer.menu.price * \
 		PlayerTenant.Instance.menu_performane
 	score += menu_score
+	score += menu_score * .5 if StateMachine.save_file.is_combo_high \
+		else 0
 	score_label.text = str(score)
+	
+	DayResultPanel.Instance.incomes_val.text = "Rp" + str(score)
+	StateMachine.save_file.incomes += score

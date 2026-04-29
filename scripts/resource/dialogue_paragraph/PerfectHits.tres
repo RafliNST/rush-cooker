@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="DialogueParagraph" load_steps=2 format=3 uid="uid://drliacsii2er5"]
+
+[ext_resource type="Script" path="res://scripts/resource/dialogue_paragraph/dialogue_paragraph.gd" id="1_skuej"]
+
+[resource]
+script = ExtResource("1_skuej")
+paragraph = "Ada momen di mana segalanya terasa pas.
+Api yang tepat. Bumbu yang tidak kurang tidak lebih.
+Telur yang matang sempurna.
+
+Malam ini kamu menemukan ritme itu berkali-kali.
+Beberapa pelanggan berhenti sejenak setelah suapan pertama.
+Tidak bilang apa-apa, tapi senyumnya cukup.
+
+Kamu belum tahu resep rahasia itu apa, tapi tubuhmu mulai mengingatnya.
+
+Terus masak seperti ini"

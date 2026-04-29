@@ -33,6 +33,8 @@ func initialize(seat: Node2D, func_menu: Menu, func_seat: bool) -> void:
 	seat_at_right = func_seat
 	
 	waiting_timer.wait_time = waiting_time
+	if StateMachine.save_file.is_combo_high:
+		waiting_timer.wait_time += 7
 	order_icon.hide()
 	
 	if origin_pos.x > 0:

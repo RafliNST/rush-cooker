@@ -5,7 +5,7 @@ static var Instance: CustomerManager
 
 signal order_complete(customer: Customer)
 
-@export var elapse_time: float
+@export var elapse_time := .7
 
 @export var customer_scene: PackedScene
 @export var spawn_points: Array[Node2D]
@@ -48,7 +48,12 @@ func _ready() -> void:
 	for seat in seat_points:
 		seats_dict[seat] = TABLE_AVAILABILITY.YES
 		
+	if StateMachine.save_file.unhandled_customer_too_many:
+		return
+	
 	new_customer_timer.wait_time = elapse_time
+	if StateMachine.save_file.is_combo_high:
+		new_customer_timer.wait_time -= .2
 	new_customer_timer.start()
 
 func get_available_seats() -> Array[Node2D]:

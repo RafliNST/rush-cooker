@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="DialogueParagraph" load_steps=2 format=3 uid="uid://du6h1mlflxg2k"]
+
+[ext_resource type="Script" path="res://scripts/resource/dialogue_paragraph/dialogue_paragraph.gd" id="1_52k31"]
+
+[resource]
+script = ExtResource("1_52k31")
+paragraph = "Jalanan lengang sejak tadi sore.
+Sudah berjam-jam menunggu, tapi tidak ada
+satu pun orang yang mendekat.
+
+Mungkin ada acara kampus. Mungkin hujan kemarin
+membuat orang malas keluar.
+Atau mungkin memang sudah saatnya berhenti.
+
+Nasi goreng terakhir kamu makan sendiri, dingin,
+ditemani sunyi malam dan lampu redup jalan.
+
+besok, gerobak ini tidak akan buka lagi"

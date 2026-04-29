@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://rylx0kljhi4w"]
+
+[ext_resource type="Script" path="res://scripts/settings_layer.gd" id="1_fquxf"]
+
+[node name="SettingsLayer" type="CanvasLayer"]
+layer = 5
+script = ExtResource("1_fquxf")
+screens_size = Array[Vector2i]([Vector2i(1152, 680), Vector2i(1280, 720), Vector2i(1920, 1080)])
+
+[node name="background" type="Panel" parent="."]
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.2
+anchor_right = 0.75
+anchor_bottom = 0.65
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="container" type="VBoxContainer" parent="background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.2
+anchor_right = 0.95
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="resolution-label" type="Label" parent="background/container"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Resolution"
+
+[node name="OptionButton" type="OptionButton" parent="background/container/resolution-label"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -10.0
+offset_bottom = 10.0
+grow_horizontal = 0
+grow_vertical = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "iraeaefasd"
+popup/item_1/text = "adfasdvasdfsdasdf"
+popup/item_1/id = 1
+
+[node name="close-button" type="Button" parent="background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 1.05
+anchor_right = 0.7
+anchor_bottom = 1.05
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 28
+text = "close"
+
+[connection signal="item_selected" from="background/container/resolution-label/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="background/close-button" to="." method="_on_closebutton_pressed"]

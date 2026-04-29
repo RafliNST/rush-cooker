@@ -21,12 +21,11 @@ func _ready() -> void:
 	if Paralax.Instance != null:
 		Paralax.Instance.camera_move.connect(animation_to_idle)
 		Paralax.Instance.camera_to_center.connect(animation_to_cook)
-		
+	
 	ready_menu_icon.hide()
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("end_day"):
-		print("Children: " + str(CustomerManager.Instance.spawn_point_children_sum))
 		if CustomerManager.Instance.spawn_point_children_sum >= 1:
 			return
 		

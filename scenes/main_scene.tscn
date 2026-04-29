@@ -99,6 +99,7 @@ horizontal_alignment = 1
 
 [node name="DayResultPanel" parent="ScoreLayer" instance=ExtResource("6_53gor")]
 script = ExtResource("7_jsdxm")
+ending_dialogue_path = "res://scenes/UIs/ending_dialogue.tscn"
 
 [node name="NextDayButton" type="Button" parent="ScoreLayer/DayResultPanel"]
 layout_mode = 1
@@ -115,7 +116,7 @@ theme_override_font_sizes/font_size = 22
 text = "Next Day"
 
 [node name="DayCycle" parent="." instance=ExtResource("6_pp6gi")]
-minutes_to_cycle = 1
+minutes_to_cycle = 3.7
 
 [connection signal="track_changed" from="GameContainer/HBoxContainer/RhythmScene/SubViewport/Conductor" to="ScoreLayer/ScoreControl" method="_on_conductor_track_changed"]
 [connection signal="pressed" from="ScoreLayer/DayResultPanel/NextDayButton" to="ScoreLayer/DayResultPanel" method="_on_next_day_button_pressed"]

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="DialogueParagraph" load_steps=2 format=3 uid="uid://cq3cvm2bsdw8s"]
+
+[ext_resource type="Script" path="res://scripts/resource/dialogue_paragraph/dialogue_paragraph.gd" id="1_vt52r"]
+
+[resource]
+script = ExtResource("1_vt52r")
+paragraph = "Tanganmu pegal, tapi rasanya berbeda
+dari biasanya.Pegal yang menyenangkan.
+
+Malam ini kamu melayani lebih banyak pelanggan 
+dari yang kamu perkirakan.Ada yang datang dua kali.
+Ada yang bilang terima kasih lebih dari sekali.
+
+Kamu belum jago, tapi setidaknya sudah bisa diandalkan.
+Besok pasti lebih ramai"

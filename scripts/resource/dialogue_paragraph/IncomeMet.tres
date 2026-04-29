@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="DialogueParagraph" load_steps=2 format=3 uid="uid://ctqngs7xc07rg"]
+
+[ext_resource type="Script" path="res://scripts/resource/dialogue_paragraph/dialogue_paragraph.gd" id="1_yf627"]
+
+[resource]
+script = ExtResource("1_yf627")
+paragraph = "Malam ini terasa berbeda dari biasanya.
+Kamu duduk di pinggir gerobak, menghitung lembaran
+ terakhir di dompetmu.
+Angkanya sudah cukup. Lebih dari cukup.
+
+Cicilan bulan ini beres. Kos aman. Mungkin bahkan ada
+sisa buat beli telur lebih banyak besok.
+
+Kamu tertawa kecil sendiri, entah karena
+lega atau karena tidak menyangka bisa sampai di sini.
+Gerobak tua ini ternyata tidak seburuk yang kamu kira.
+
+==== SELAMAT ==="

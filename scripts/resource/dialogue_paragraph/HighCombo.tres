@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="DialogueParagraph" load_steps=2 format=3 uid="uid://yjg4p78votkw"]
+
+[ext_resource type="Script" path="res://scripts/resource/dialogue_paragraph/dialogue_paragraph.gd" id="1_ibch2"]
+
+[resource]
+script = ExtResource("1_ibch2")
+paragraph = "Malam ini gerobakmu tidak pernah berhenti.
+Pelanggan datang bergantian, dan kamu tidak 
+sempat berpikir, hanya bergerak.
+
+Wajan ke piring. Piring ke tangan. Tangan ke pelanggan berikutnya.
+Di tengah semua itu, ada sesuatu yang mengalir,
+seperti musik yang tidak terdengar tapi terasa.
+
+Beberapa orang di sekitar mulai memperhatikan.
+Besok, mereka mungkin akan membawa temannya"

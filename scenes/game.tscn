@@ -135,7 +135,6 @@ pivot_offset = Vector2(64, 128)
 texture = ExtResource("7_6e8hv")
 
 [node name="CustomerManager" parent="." node_paths=PackedStringArray("spawn_points", "table_points") instance=ExtResource("7_wenam")]
-elapse_time = 0.5
 spawn_points = [NodePath("LeftSpawn"), NodePath("RightSpawn")]
 table_points = [NodePath("../TablePoints/table1"), NodePath("../TablePoints/table2"), NodePath("../TablePoints/table3"), NodePath("../TablePoints/table4"), NodePath("../TablePoints/table5"), NodePath("../TablePoints/table6")]
 menu_selection = Array[ExtResource("8_c0xgp")]([ExtResource("9_j3qq0"), ExtResource("10_ggkpa"), ExtResource("11_rffrp"), ExtResource("12_tbh8r")])

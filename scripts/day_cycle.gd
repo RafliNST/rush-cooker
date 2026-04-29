@@ -7,7 +7,7 @@ signal day_finished
 
 @onready var day_timer := $DayTimer
 
-@export var minutes_to_cycle := 3
+@export var minutes_to_cycle := 3.0
 
 var cycle_complete := false
 
